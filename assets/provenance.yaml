@@ -24,6 +24,14 @@
   sha256: 91a9bf4554c829426333c0a4e049cedc77e8597d415930e492f0cf3b8799c3a8
   origin: you
   source: earlier detective game
+- path: assets/characters/duck-higgsfield.png
+  sha256: 13d4a628744c4e5a23616ddb6410496bcf5005751956377fd8d6cf7ecb05b0ff
+  origin: you
+  source: earlier detective game
+- path: assets/characters/hoot-higgsfield.png
+  sha256: 2066855ee64cd0feabebaff2aa57d5e124f5485844cc84ba7988ed71ca208233
+  origin: you
+  source: earlier detective game
 - path: assets/fonts/Paperlogy-4Regular.woff2
   sha256: ad469e33f2ee5f96ba7f3e5df09350daac0420c6a60264119da201eb1bbbfae9
   origin: you
@@ -39,15 +47,151 @@
 - path: assets/new/betty-home-clue.png
   sha256: 4e2added1fa01b66fb2606ac786453f98079ad738fc64635885b84b251e089ae
   origin: ai
-  source: higgsfield gpt_image_2_6 (biscuit.png background removed with higgsfield image_background_remover)
+  source: higgsfield gpt_image_2_6
 - path: assets/new/biscuit-found.png
   sha256: 62df9eb71948deea19dbccc516e4d44bc076ec3996158edaac31878775006389
   origin: ai
-  source: higgsfield gpt_image_2_6 (biscuit.png background removed with higgsfield image_background_remover)
+  source: higgsfield gpt_image_2_6
 - path: assets/new/biscuit.png
   sha256: 8302faf7be11ed05df40a5809583562e161efc7aa3f8c150beffd7d1e7fdc0e9
   origin: ai
-  source: higgsfield gpt_image_2_6 (biscuit.png background removed with higgsfield image_background_remover)
+  source: higgsfield gpt_image_2_6, background removed with higgsfield image_background_remover
+- path: assets/new/finn.png
+  sha256: b1a69b95d06a7c73c1f930e948f3437fc2d374f4002985c90dad903239200f50
+  origin: ai
+  source: higgsfield gpt_image_2_6, background removed with higgsfield image_background_remover
+- path: assets/new/loc-bakery.png
+  sha256: b0c44046cc581962a554a8515958830d09ab83da8f58bae110828ef5b1d93109
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-bridge.png
+  sha256: 0aaf393862146e6464c5965df7c3e4345b3e664ae5675c4b3a9d33788777bc39
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-costume.png
+  sha256: ffa85f7f87c387c26b29860e7f6e65d5d96269600975f5b2797e004b815bfd6d
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-dock.png
+  sha256: 8a54238f771325edc2dbd7c4d1c340586d3af1104f817665eb62242516aa11c1
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-flower.png
+  sha256: 428b20c3b2e7274351b3643e112c1b7ce75d8b6eb26a1f2dcb2a1d11710bbab3
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-fountain.png
+  sha256: e298453bb02b31f1efae615423e34af28a6be161b724f0aba200770c4fd89560
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-green.png
+  sha256: 82943695f9916d31574267a4cf8597ac48aa64099beb3ad00c2025ec4a36ac18
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-hall.png
+  sha256: 6e32c1295e9e4be1166e10bb8d01ae91103b8e7cd50268469a809e687edbf3ab
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-kitchen.png
+  sha256: f8b7de9c4cd6f2e0fc5b467402b48605eb8d0aef2e5a1b46ca94d3c4de775bee
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-libback.png
+  sha256: 6802fa32c98ab1fef6a79fb5e019e2cb8c3ffa949edbfa58bf63a666269d6273
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-libdesk.png
+  sha256: 97087dd12bd65bd3138b201be221a6dc2b8b606379a631c41f6d6b4037ccc7a3
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-library.png
+  sha256: f9e176de119dca5351c9ee61e5c57098bd481987b6a0d3f7d4fb778379b2f99f
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-post.png
+  sha256: f2044880e92fc954c125a0b1f996b8da07fcf880a0e60624ca7816a49dd4d40d
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-props.png
+  sha256: 0da546d6f9936815c246bde6f6d8c336153452b772003c07f8016c4135adb37c
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-pump.png
+  sha256: b3de08379de0c94557db42b08084312e03f9216332a4a4c17b2298b92f460177
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-sewing.png
+  sha256: 419d073633374789108b4af4be90e4f272da43dbfa9899ec6cc051bca539fc0d
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-square.png
+  sha256: 2f770c327efde519fef4f6639904f6b718ad6a2e885e8906645aee1627b84bab
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-stage.png
+  sha256: eb3ff1b4e7a57d601bbc254db5a22ac019a92b5f424ef5ad67f97a976f6c9208
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-station.png
+  sha256: cc63903c0a6997a191c8a85fe050f15229e943cceaa7ef0354f562a7cdc22c93
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-studio.png
+  sha256: bad03e9f2d546e2e3defa79662160c201a595e36e4b7720637e18d2293db5a50
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-tea.png
+  sha256: e67bb9db57abe3ca3209f29facc48162b92261fef5a40d4812d46803484c8c89
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/loc-workshop.png
+  sha256: 3e0f5f2d88bb7f7c7e71cf8c7e8b953e73952b1f97e05ecac0ea9892120db28d
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/milo.png
+  sha256: 41c540274153637bc557b579e93f91f7af0b504b92353e1f598822d8e165a141
+  origin: ai
+  source: higgsfield gpt_image_2_6, background removed with higgsfield image_background_remover
+- path: assets/new/nell.png
+  sha256: 40271fabf7a584ef2a403242a22604e5f8a7d35d2081d3a24c5e453ff4a5d6dc
+  origin: ai
+  source: higgsfield gpt_image_2_6, background removed with higgsfield image_background_remover
+- path: assets/new/s02-found.png
+  sha256: 91bc4340ec2a9f838126df6971031bcc34cd46d81462befca796da8a51cdbc42
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/s03-found.png
+  sha256: 2ac233cf1dc329277d034fc29fbdd440d784329b5c066fe58ba933bbff4e93d4
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/s04-found.png
+  sha256: 86e8abc616f31c3f0226243f9e8a1acef22d1e0ec3d6b102540fcc32194c463d
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/s05-found.png
+  sha256: 1a719fc7ee9cd3d934c8392846f5d20de7efa6f9ab695912836fa11d56979236
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/s06-found.png
+  sha256: 4766243ada2b061588e441e4834d1bd4417778b17afd9d8f9a788fdb60b729a0
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/s07-found.png
+  sha256: be3cda619d3713ad41ce93cbeef9e1585677daf82b41946b67a68e6cae1a0acb
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/s08-found.png
+  sha256: 094b1efd802b2fd32dea8c3606cae8c87f280150ff174b156e059d6acb4cd198
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/s09-found.png
+  sha256: b7c6378ae11ca7258b8998364438f11a5e878ef722992746dc0935b6c46d94d4
+  origin: ai
+  source: higgsfield gpt_image_2_6
+- path: assets/new/s10-found.png
+  sha256: 5989de85b08998af2ff89ef061380ff418b6d8a53d65d037810c5473ea8baceb
+  origin: ai
+  source: higgsfield gpt_image_2_6
 - path: assets/places/betty-home-floor.jpg
   sha256: 5927ac3f6cdf74912126a78a378fb885529c431a93cc05b7f64966f9b5a44e4c
   origin: you
@@ -60,8 +204,8 @@
   sha256: c828e209adebc4a7ee5c8b8663b6c5eaf23bdc645125763f359c2c24d0211c3f
   origin: you
   source: earlier detective game
-- path: assets/provenance.yaml
-  sha256: 8283248e20a81bd302d626429c0fcfc47d905dae5a79792b01c53c4718749255
+- path: assets/places/village-map-day-higgsfield.webp
+  sha256: 302d70419af62cfab7a9f9f9dd804bb5545e2419843d782c5b0e9a17320e9ee0
   origin: you
   source: earlier detective game
 - path: assets/ui/buttons/berry-flat.png
@@ -150,6 +294,10 @@
   source: earlier detective game
 - path: assets/ui/nav/home-house.png
   sha256: 09afe4e83f1a0f0345cf7f0047757d150c00b082e30b8d975b52870277ea559e
+  origin: you
+  source: earlier detective game
+- path: assets/ui/nav/map.png
+  sha256: ec9fad2a2f228e333d8259aa0712c3717952afc9207151d7b1d5c25b680fcb02
   origin: you
   source: earlier detective game
 - path: assets/ui/nav/note.png
@@ -252,6 +400,102 @@
   sha256: e4230d215bd19b08e454a282a8afb41d660605030877917f5dcee93334f99396
   origin: ai
   source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/betty-c2.mp3
+  sha256: 0bb11fa6dca32faa8e2049cb0cb07205b503f7cfc855b6de4491974a344b4ccc
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/betty-c3.mp3
+  sha256: c7af8b145d772653c43ac8bfbf3b8abfefa169814f91f3a9465a10fe2e5ca1ce
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/betty-c4.mp3
+  sha256: e80c0131b73722a9d5010fbe6f8f2a1c6f636115b86c0304a4a3ec0e821a3ed1
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/betty-f3.mp3
+  sha256: 0486466bf34325db11ff5cf37bc8024b43a95640b013f3c13e8c5e96090c24b3
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/finn-c2.mp3
+  sha256: 56ffbfac0667f928a153cba5fe1d8192525cd617abaf6d7dcbba9f034226ce13
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/finn-c3.mp3
+  sha256: 7123ba844c4320fbb313ab572900bd0ad8f8417353448d3d0a6388d05bdb3c9f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/finn-c4.mp3
+  sha256: a584f5b90475aa24452a63d070abc6dce1b682b6318f1a10eaeafb0559262989
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/finn-f3.mp3
+  sha256: 3b60e1e7b49e1f5c27a37ff7a79d00a072d8e4582e228461c08d43bef7cb4388
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/milo-c2.mp3
+  sha256: d73b14fc9e2e8e2d8dd52f73f61056d44ef2516dc0e8aac0e46499c8950a1c86
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/milo-c3.mp3
+  sha256: d9a3f8e59cc7699c5e1b45025c4910286946cbd5c742b0569923a79ededb027b
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/milo-c4.mp3
+  sha256: 8d9b302699736be46abef87440a248e9588ac4032237b1fcb803cd436abca078
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/milo-f3.mp3
+  sha256: 7bc6f9b032c40edbab7af1fdb3ea058a4728cd8697b57b1d2828a62bcb765d62
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/nell-c2.mp3
+  sha256: 81eb6058c5d50e5b952bd982c1b085e1356270d7d44e1f2fabfab7de5bd41511
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/nell-c3.mp3
+  sha256: ceda507b58a5069bb3751df6e2dacea2eba18bfb2280394aff641e19d7f64e50
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/nell-c4.mp3
+  sha256: e9d254312c92f994355c47816803d47581182b2a802e0dc132f4c350f7635088
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/nell-f3.mp3
+  sha256: c6bc11561e7d42d2d1cd63e635fa8caf6a9f8b5ac5fc5a0cc2bfbf0dbf45af82
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/olive-c2.mp3
+  sha256: ac2feb2619453482fa80e367f97ca906f1b981dd1fe2c236cb39380035738f61
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/olive-c3.mp3
+  sha256: 3645e0422c4755410a64712e2ea2081becd9c6045f24b9059e4921216e2b9149
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/olive-c4.mp3
+  sha256: 6dc54c3a54e77d4746b9777dc2cf2e0da5ff6e8c8ede9307059cc8fc526fe2d9
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/olive-f3.mp3
+  sha256: 010f765ae8d7473c0375ad79cbb129b97108aa5dfac7b6d174b32ca5eebc68c8
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/pip-c2.mp3
+  sha256: 4b5ad5979ac613157a82e06d14a17d626056781a2802ae092335fc237a616e7f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/pip-c3.mp3
+  sha256: fa38298c4f22e58d21357e9040851bf212685af145931a729e90abee45ed496d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/pip-c4.mp3
+  sha256: 5eaf8fbd07f29d76ed9d784fa5da2ed4fa963d68611f6c640372ab75a64d12dc
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/common/pip-f3.mp3
+  sha256: b2909bea7571be8b25826e92aae179fa622b43305e20a1d2d403403da6a8238f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
 - path: voice/d1q.mp3
   sha256: ea78c96dc024c7fe2a88eaa365db380d392398b728eb6eb149477186f636037c
   origin: ai
@@ -334,6 +578,870 @@
   source: higgsfield text2speech_v2, elevenlabs engine
 - path: voice/q3.mp3
   sha256: baf1c6e490d509d442aa00251c7f5ce0842a75ca7482d1446418743ca1393ded
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/a1a.mp3
+  sha256: 722087487586f0dd48f526cb6651cebf150fadf885017a40e833169fab3df176
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/a1b.mp3
+  sha256: 30858a61f4775d71e96b9c318ac62973e9744bb7acc156c41bbd73a5b2954dbe
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/a2a.mp3
+  sha256: e45f6c3e3852301614b93178536560cc7ca6b32e67337d22c7165d96d0e69d44
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/a2b.mp3
+  sha256: 02f991e993c760ecbef9b5d5ddd2b2e63e128519b1efe8bc97f6622950e78d10
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/a3a.mp3
+  sha256: 0bf8727399e54cfb8e82f7941cb342bdf85546cb64e9514373486580d39f189a
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/a3b.mp3
+  sha256: 1c2a80e9fe855677509bed89a1cd30aa219e80cd3ca2fee315e7c0221fd4a5ff
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/c1.mp3
+  sha256: 29c8dde982c3c0084081e6d7c6020068b4f3ab0b2a1ad0b296e9d6c90e7e7513
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/d1q.mp3
+  sha256: a13ea84ce072d605dd7bfafb88e37048fbce7bc03bdb1258a182ee7c0c51fa41
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/d1s.mp3
+  sha256: 05d87890e52d8f8b1793aed746d55a9a8bd2421032bc8b2b8d45a06c8ba8019c
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/d2q.mp3
+  sha256: 9be10b056b950382f67ae19c593adb2c4ed8fbf0fcd8f044654791f4bb25d4d1
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/d2s.mp3
+  sha256: 2f48c1f2cf4e287427c46eacdb1bab6fc8e5433318a41015c61be6dcbdc548c8
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/d3q.mp3
+  sha256: a91fcdaf5511dc5cba9dc3aec04aa3ae7377da20779c615a71b7383d0a6e2419
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/d3s.mp3
+  sha256: 853a09b7081569f4eb8fa31e588cd4d4ccf4ab02adeb22ddc13ea63eb9a9b44b
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/f1.mp3
+  sha256: 938ae3b71a41b7277ddd1021eea3dc3121474943fc5b5f6e787dbdc12d135797
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/f2.mp3
+  sha256: 4944fe81df0e06dd5d1c19a88466332b3f4fc96a95cbc783608d285dd9498403
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/h1.mp3
+  sha256: d68633f3453c3a23297112e781e13a46f3c38c1e45d13cb706d82723ffbf9a81
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/h2.mp3
+  sha256: b5fe42a75cce52e07234e2b8ed204db608ca82168da526d5016f7e06016bd5f9
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/h3.mp3
+  sha256: 66cbf9580c8cf08c478cd9ee21ead6e41a0ec96796b7d72ace52b15a8aff9170
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/h4.mp3
+  sha256: 5356c925511fc3ba8b535de03ba75cba13fb79487fdf08b57ddd01eb25522df2
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/h5.mp3
+  sha256: 308240f35ae232f912830d49166ca70d8105eab6df74c78d3426ee8024691b5a
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/o3.mp3
+  sha256: 40ef15b171ad44cf842a9ff9fd648585f40d887295d455e3eb8be8107fab5c19
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/q1.mp3
+  sha256: 611a413accc3cdd21021a059f0256859cf3ba979b244ad3194b4223bccfb5331
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/q2.mp3
+  sha256: e85d5b3c590f40740f57fad2117311edb62f13dde0489ed87ff3650482e6fc0b
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s02/q3.mp3
+  sha256: e1b5b27346a2f77afd94f6d15f2cbab1e3b4d27cd852c2919f7d3788f90dc098
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/a1a.mp3
+  sha256: d9e7686a396692b6265b3d6ce665e214dabb4dc490b9580e4f457d61985f01ae
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/a1b.mp3
+  sha256: f93777f93eeb20a9dffc747c727798fde5b794f3437d7e0a0e51eec30598b415
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/a2a.mp3
+  sha256: 36a37c37f3a84e50bc027e4ac9d06c03d9cb137b23d768b09d1a153779ff2c1d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/a2b.mp3
+  sha256: 0c23fd459c0803b287ebe95d0ea349ed2988eb382c24d7ea1419d56f7c6ea49f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/a3a.mp3
+  sha256: e3f8a7ea947c861e0680ddff39defa92e318db8e10361fdd5b8f6b69fe6ffdb0
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/a3b.mp3
+  sha256: bc747da260119aa5e7be296701d2b9f57bee9594aa293b4b9b37ce8108a905e9
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/c1.mp3
+  sha256: 9c8043e57ee176229fa558edbef6c24b4bea600723d677f3df855e7114e9e537
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/d1q.mp3
+  sha256: e3f0be0c5fcb7e11bf42102a418318a580b97aae920ecd834026f6d980be1668
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/d1s.mp3
+  sha256: bd81e34e68edae518d15f7ff7bca0dfb70cdec116813e42475d69b1b76a10943
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/d2q.mp3
+  sha256: c0d41000533c9252ea709094fdd1a8439d0b9c5b12b521da324f7c786e15d936
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/d2s.mp3
+  sha256: d5b92c5376ad759449430d43faf334712ac40ef8d1fb3e45f68ff89b0df31314
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/d3q.mp3
+  sha256: aed98c741d051451b35a4c643f41ba6c717e609e4e49c1b02a3a18482c6ab050
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/d3s.mp3
+  sha256: c810c99ae47012d675fd73b2e96cfd0071d2e11c6e621f767326ac66f71790f2
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/f1.mp3
+  sha256: 6167c6da4b2babe1a255e46b10ba66a9a17680c3d3f4d629cee8c8e40c17c53e
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/f2.mp3
+  sha256: 08fd8ee30087312a4a40105870fe4fe5a8f5c1dc2c1c70b7ebf930df2900dea2
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/h1.mp3
+  sha256: 8fbdb40742b43e002ad86da958f481ba4e48254144d65944994677d5a4ae0135
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/h2.mp3
+  sha256: c21102cb7205f946083b8b44c5234ebe5301887694ba6b234745539901519c6f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/h3.mp3
+  sha256: 2abe122e912c55dbc3f69c7b3120f251c11236c31933ffe286427a0aca456338
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/h4.mp3
+  sha256: a4d0663abcb3afc6f706bef95799f1d897646a322c324719737c48a44706d796
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/h5.mp3
+  sha256: 8cc1e3ebec1b2e08e3c9623817aec73d6d8fac4a999cf6d9cc01d6f5343d7f0d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/o3.mp3
+  sha256: 087f0ed969f5bc43943ee3049251b91a2506df071ac2c9a580a934e418de4e99
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/q1.mp3
+  sha256: 034f6337b231ee93f906cfb9ab83104c102504f18ca7e5fa1e4f9e0d56038f12
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/q2.mp3
+  sha256: c6e19708ecb5fa09e3940fa942ebf8201bc92b5743dae03a77e1f530addbee9d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s03/q3.mp3
+  sha256: 59809079faf14a14b1e6d2583d2318c8413eb137d278a77cca2cc1399a8fe367
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/a1a.mp3
+  sha256: 090907cba02e2a44bbb0cd85a9f21116030de490383f1a08730941e46f1e353f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/a1b.mp3
+  sha256: 8a5899bf4a7c05c78b47f2473232787118f357ddd6bce5fb60e42cb36e94b251
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/a2a.mp3
+  sha256: 3011107df1bbf1bfc2d15c4547720f0ebb003184fbe24bbcc02eeda7c06215cb
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/a2b.mp3
+  sha256: 42ffd2b3b8f45a36ddcd7d2e21a9337ace8d8dc191fffb0c7a4941283687e59f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/a3a.mp3
+  sha256: 8528bf9bd2dcabe4cc392e5455935583aa7982c6fcef4080321e0d7f2a9c947f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/a3b.mp3
+  sha256: 84b449ed08562eb269938ed8aafb6caa2702f3d2341b92d5556df27a38c477c8
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/c1.mp3
+  sha256: 04533da4065a11d876fb8e99b74b75564c270906c1051af866e4a63c720883ec
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/d1q.mp3
+  sha256: 0c61b67922b7a04d4ec9b609d1945c8fe82f30faf971ce84e26b9f9a372a5f24
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/d1s.mp3
+  sha256: bab51d7c61e289d8bf91e6c7911b012c1afb8f410036b8a1924b348e89c535da
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/d2q.mp3
+  sha256: d21efc916afd25642744caeb28d08a90cc25c8c7b10f157d7fe61bef689b01c3
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/d2s.mp3
+  sha256: a2e7a9b5bdb745ea87752fadc3b0cadcf4dd793f23f98342b38b1f995bfed2c4
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/d3q.mp3
+  sha256: 2c5f56b848e736887ca69761919135060b98cbbbbe78c5d0fc64deb2b7fed13d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/d3s.mp3
+  sha256: e6ae84acbd7c0887020fcc13ae125e54190b6cc1706776830bc7c8eef10776a6
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/f1.mp3
+  sha256: 3d3bf799737dc65add7b916c304e37bf89135dcd9083077f1b9499ee1117e78f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/f2.mp3
+  sha256: ff861432ff2792da00f755fa346f0f2f5428ce091aa8401d513275c12decdc54
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/h1.mp3
+  sha256: fdb230d8e37838e68b74c6daebffd15dc0ae133990bc90fb5e8f4d3221b0983d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/h2.mp3
+  sha256: a8abe406d6fd3a2101d05c0dda33cf7c59135f66a5b73b0fa08470bf902d501a
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/h3.mp3
+  sha256: 8ee0622bda0b9d4379c9b86890a465bf0549c76e659089ece5293f8aa2ddbd2f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/h4.mp3
+  sha256: 0e2efa55224b3960885a539fed7fed32768b527fd51268fcc1b441d97c7691be
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/h5.mp3
+  sha256: 140bed87204560ac708ded585b3b1077acd9b8cabc6b7d1fc5bdba7b7e6b7e5a
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/o3.mp3
+  sha256: 0a785da147e76532ed0642e11245d0c531a120f6718ff4ae05874e65df36ed20
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/q1.mp3
+  sha256: 079fe130a0627c2cc1501f3eea9bf0f5d6680f2e9519748f55e9463eccc4a66b
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/q2.mp3
+  sha256: 5c7988bb0114b56e101b926b4a5f7973ed326ad7e7fa75f221e46d93ad0c7a50
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s04/q3.mp3
+  sha256: 4f85cb9cfe2170c60df4cd0d2aa4b1de2831387f6947487c059f58f5e07519c8
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/a1a.mp3
+  sha256: a3bb3fd94760a47061a97f805d036b1a45a0446047230337ddf1b1c0c5183362
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/a1b.mp3
+  sha256: 5c3b5e65bcd71931f417b54a4051dd1bb95d1e71d18dac992a7841ebb3562693
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/a2a.mp3
+  sha256: 28b46560419dfe3812948a426164857fd8314acc2ad5acc04b8ceee501571b14
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/a2b.mp3
+  sha256: ed4addbd8788aeb378b808e86c24d2f7b238e2805aa94f81a31c7c0db4a8d87d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/a3a.mp3
+  sha256: c76f2f8512b8556c4b934ee38260a9d87796e29ca17d2c896f27719c52eee261
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/a3b.mp3
+  sha256: 90a38266f49ce31d319f4eb0283802d67098c9f164f0d990237907a37c5f35cf
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/c1.mp3
+  sha256: 9212ac8d97217c808629f633511e78955417ec23124aec35f17ab7215ab35b62
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/d1q.mp3
+  sha256: abefdf9ff782ac5835fd7a4136da5db30399bb9a9327331bc83c4025c054afe7
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/d1s.mp3
+  sha256: 52c36bf34dde21e303bbd2bde1a5a23bf2a7ba56fa9376bba4d946bc874426ae
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/d2q.mp3
+  sha256: c81701ea1865ab17f30ca73767026dbdb1448cc6af0a5a6018460514a5932b5e
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/d2s.mp3
+  sha256: 1766468d365ad42fcf9521863460b1951e4ddc1642a91f95d87b1472ff157060
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/d3q.mp3
+  sha256: 82713a7f31c2bbf2dee27bd08686aed1b60f29cf8686e1efe82a4ee17308705c
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/d3s.mp3
+  sha256: 923e1aeb47a00a0b956018c6a0474cd7be371f751eb3d99380782c287351867f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/f1.mp3
+  sha256: a341118cacecb0f0722c6096f005b43c3c76e5bee5166238f1cb5ffecfa10f5f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/f2.mp3
+  sha256: 016f2ab1cac79e21ddab85575cabf434d5bcdd4b4538d2b94efce43b3221f01d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/h1.mp3
+  sha256: a9136ee7a51b062460562b4d8c3bf5e6e27abb1347be1539013bdaa0857a430e
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/h2.mp3
+  sha256: 435220f5356e39110ae4dca984e20560d49919e0e57f05a9c2ac8e46ae6960ad
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/h3.mp3
+  sha256: e26b894be41f23795a61596c98f046a0d11fe10d1b2f0f697aa24fbf7820a98c
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/h4.mp3
+  sha256: f00075c44f3fb0b33a05f46769cbadf642c4ee253380b69432c3c7c584474141
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/h5.mp3
+  sha256: 352744e896927866e95d6393c7ffe8f6de7377e35cc2c173794cc090e7d433ff
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/o3.mp3
+  sha256: 8741e8b498c710276bb7263b45251ca41c4580c6b3f6e9e196f60419cde539d4
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/q1.mp3
+  sha256: 17979c4565d1a36ba2beee66b23dd20797f8d5ac25d2c14eba0d152cc9d17e4e
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/q2.mp3
+  sha256: 4d932d8dea8c6c27a2ae0f671d067df7060484abdeeb90988509700680316d8f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s05/q3.mp3
+  sha256: ebf16356a5df5aadb39980af17bfc139b69fed6b7c9857fc10f02e14e74ea9e0
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/a1a.mp3
+  sha256: 897c5d1e91a31a0f51baa0b3fcae130980148e71ca3e65cda64f9e1546de5090
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/a1b.mp3
+  sha256: 528d068930d691592e2a81651463470d466cf928939d0bb047331fea5cb7ac34
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/a2a.mp3
+  sha256: 021307847e680f5e01ac0b9b0de343ee6f6fccd5863f6ed6273068146cfbc435
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/a2b.mp3
+  sha256: 198c49762851bde51da2c1bee93abdb49332fc908e9b49c23f930455244d1847
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/a3a.mp3
+  sha256: 3f29a58f78bbe36e097d80abebf2111d3bf8c4e1aad319f7f3516c2b8c5e0e2b
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/a3b.mp3
+  sha256: fd82a9f2871336f76b8bb144ef0e4fd03aacfa6c98c9db3f47770b9cba796f57
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/c1.mp3
+  sha256: fec87ab271e01cd1a3e4290bb0acc300aa252ee5f9b171b6472936da39845dfa
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/d1q.mp3
+  sha256: 65763781b1fae3b46b9d5352c0aafd066e3b23b14f18cd1b43f1b59d82c228e4
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/d1s.mp3
+  sha256: 479cb5ababf7478ba139447c5c8a7336229c08c3cce6f2af2c2f4d486c08262f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/d2q.mp3
+  sha256: 57edb76e0145cc06ef871e25ec4aa0b770fc1c923d8f6773c6edd1c0789be859
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/d2s.mp3
+  sha256: 41a612a65d5c192932cc97fb380dc50569d2f0dec8029f3b718876e2da8ec043
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/d3q.mp3
+  sha256: 3924221b55fdec791d235a55d9b1e78eba0e72e7036a7082aadce71b7adb1130
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/d3s.mp3
+  sha256: a7626d70c8cf0e9839bd2097513ddf571a2b4d360cadc6ebe8d0fbb3bf344a78
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/f1.mp3
+  sha256: 3ff200b435881231434aa7e9fb1fe37ef1fe9866e65eec66d0a14949aa32f382
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/f2.mp3
+  sha256: 9b1ac7fec34326efd369c6f78b3dd6a1b22e887985a4ae93a7b8a51d059fc0de
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/h1.mp3
+  sha256: 06e1dd93ecc9588712c1bd492f6a776903cbc054b7e524f53a12435e7a6fa3fd
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/h2.mp3
+  sha256: 307b3f9e699c2616c376653b6173f572ecc5b98702174b188bb1c0229efdda29
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/h3.mp3
+  sha256: 64c382084b36605f1b531fa4cc5d7fb4c8545c02518f31962d05d885c199de00
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/h4.mp3
+  sha256: 0d1a618784caea569259d181e446725fa291bd171346e96fc65bea40bbf1548d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/h5.mp3
+  sha256: a45e333aee163e7793dd0e4fa1a7dc3c3edf0a24637db146bb0425822b57aff8
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/o3.mp3
+  sha256: 13b2bff60523c0c6b7254be702f8c89399b8d86f86c1fa97e190a9bc9b6ac273
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/q1.mp3
+  sha256: 25a035b87e816f7e2372baf2aa17385255577fd57c871c0fddde21f34b81601a
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/q2.mp3
+  sha256: a74d097dc63f22a686d5f570f5438954e6712d608555e9cb2275f2205b720425
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s06/q3.mp3
+  sha256: eb506f07fb7559c775c0d062cafdfc0cb9874bb7c8336e02f08a02eeb8dd005e
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/a1a.mp3
+  sha256: 4e5f8bf0494bf2e654e0543f8c689baf02faed75f4e49664eb993ce7c894f18a
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/a1b.mp3
+  sha256: 977a3a91feb9c7ef794a6e4e2e965160c6ab63acd5b7aa8ca51264e961c0e987
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/a2a.mp3
+  sha256: 8e67442592f5f683c26108a0c22bcd6686c1ceb430152e6b5587c287463c52d2
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/a2b.mp3
+  sha256: 31a10ac375981228e205279b696301c1a8fb3809b54ae8230d4b09118a9edf55
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/a3a.mp3
+  sha256: 7866929acbb26b6e56dd601aa11f0521399b1597baae986657f9074821f7b67b
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/a3b.mp3
+  sha256: 218466ae71f7ad3a4de1a286ed4b7bc9aa01d2114405fd8754983991214ef820
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/c1.mp3
+  sha256: b2adb942f763a1f07f9558f4ab96a3ab597f6c33f0dfd7b5139951972f3ad193
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/d1q.mp3
+  sha256: 1aa5d23f8fbc7f26e8e87444d7beb528b94691e7467908c3300b93280d1cf436
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/d1s.mp3
+  sha256: b5e657353edf4811582049fe252bcde47a63ff1e6916f516a57b4bb82d43d9e7
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/d2q.mp3
+  sha256: 317eaf9213eb5663f10827fc6a384284403df3a7d8581ef4a3ad7ef2b74108da
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/d2s.mp3
+  sha256: bf0fa8c3e9e038b818e812d47fd2a99c4e45b606702310fb2b90d3b33ccf155b
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/d3q.mp3
+  sha256: 9d6c7b7b01daaca617ea10fd158b03a605df459160e7cf6ac5635ffdd2f939d8
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/d3s.mp3
+  sha256: 4562136d19b6febe12d30f9821fdc81297b6c833c206d8e48204e7b497a3da5e
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/f1.mp3
+  sha256: 2f533d53c91dbdbbec8b0b01fd8b3a2ef0b5e29fc8e5994d900c63e565de6226
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/f2.mp3
+  sha256: 6ef68aee6d20b94fa5d3c6486b627e003330e959ba66719ac0d68fc8eda9866b
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/h1.mp3
+  sha256: 8d85dfe6d8f21f844e56a731cd8966b39f55a03f25c5fc77f7999919b2f8209b
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/h2.mp3
+  sha256: f78d0ee43bd0d226a19ec9071cd6faf21ca3bcec086c7062a1e15a26f1bb5be8
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/h3.mp3
+  sha256: 2fe486835951bf0228e78c0f53949e386c3844c8a126df3d1d50b16d96ff5b6d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/h4.mp3
+  sha256: 9723c125e7d1fdcbcbfa1449949f40fbd5b7687719287162784279805f7aa3db
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/h5.mp3
+  sha256: f0c97e74cf15dd9bbf876b28722544d5e0a34f8cd15e104f80e28f489f405d00
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/o3.mp3
+  sha256: 0ef0ba876a4ae9c50599c311490a9169de19281a00e0ff1c5c3ab38ef1c89658
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/q1.mp3
+  sha256: 9c5e46979e6a109fb6331e22f138ee76844b5657952ef798bdfcd15fb5638358
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/q2.mp3
+  sha256: 3982eb8bec5c3a25c112717f10317368449dd918263e0c3e6e096b5f8e661e48
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s07/q3.mp3
+  sha256: a41bfc83c3396883fd2bb2558e0f0e591822a7b129d472bc3c1e6bf21245ea5c
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/a1a.mp3
+  sha256: 8215fad112ec00fab6554ad0bf3ca1e873db53e8f408f9bb2408e6c9e3340293
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/a1b.mp3
+  sha256: f94cb25bc8fac7bca234b3d5250aad83ccc97f4eb3968bdec353ec48d2ab6b80
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/a2a.mp3
+  sha256: 4d926c546758e846bcd0ad490e9c47a911c4a39f589909d3f96de21117a80a00
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/a2b.mp3
+  sha256: 03fcdbd46e2232c04d3c96ea14539dff9733efbd442154737230949127fee1f4
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/a3a.mp3
+  sha256: ec2804b62f3d9b7a1681ff6a46a6e2b7f7a0958d5a8b6e64b050faaddc0472ef
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/a3b.mp3
+  sha256: f9313a93277cab4d10fe02951a8d9520ec2aea68ca4dc5dc8d9fd80d858aa3ff
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/c1.mp3
+  sha256: d13d9920d6d40f58f90d09006bf482ebec06b9633089785514d5749577150982
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/d1q.mp3
+  sha256: 40bb1ace14384ad2750f8d4562d45362fd476c0c1244a9e3d17ade79b65e1988
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/d1s.mp3
+  sha256: 62a754f4bbd2c3e9713756a877ac93e1f2562130ae636854205aa10824ddf99c
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/d2q.mp3
+  sha256: e3b999a93d1d3084052150c176814150eb03727a68ccd9fef9c980cdd9e16fc2
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/d2s.mp3
+  sha256: c5d59928767166bf33640746b77503789f0e7ea749943fe4040a108744860b3f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/d3q.mp3
+  sha256: 0a197a606678c128562c1bbf801e87225b569ab1c817e0f0291346223681baa6
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/d3s.mp3
+  sha256: 9a4e262f4705ef7cd5dc95bfdfd3c48f5fed40f01d81b3b11de9756800adbf8a
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/f1.mp3
+  sha256: 940e280ae1859819ee099ee8bb3996cb4fb5fac7f5df70dca814ebfb0e4030f0
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/f2.mp3
+  sha256: 63c3e7331a1704ee50115280a038ff7cfb383994acce8c3d05de9aa92268e7aa
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/h1.mp3
+  sha256: 3a51b427b5dd5c6a4e6b66fbc4746580a52415cd5f582ba356c061595db5b4c5
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/h2.mp3
+  sha256: 0ecca459c6701e6294b3ef6b622bd6cfa1bfc69500df6da81cf26dbabf23c613
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/h3.mp3
+  sha256: cfbbb3f987c08641625b170306600ef1c9de9a0dba8578e90042cd74a69c69ec
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/h4.mp3
+  sha256: 55f7bb0b8a562151407c4b208026e101474fa8df075351a55c3c8a4ca1a145c1
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/h5.mp3
+  sha256: 73b5e358456c8608526ed651a8f1278b5aff8a2fb010d9c20af26ab2d613a0a8
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/o3.mp3
+  sha256: 6b802a7693680880716d9bea747ca6645a38f84060276f957806de6a7878472c
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/q1.mp3
+  sha256: d0f6a986ecb1d0eebd05d38facaaa6b70051554f94f3c26742e4a48c67a5d015
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/q2.mp3
+  sha256: d49ea656f46e3b3e4dbf9445a36d93c71c9f2ece4cccfbdfcf62d06d97769fe0
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s08/q3.mp3
+  sha256: 9e794d62acafe1fb5cbfc252fa746891ee8079ba17264f72b3992ca52acaf37c
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/a1a.mp3
+  sha256: 8529e4f4c94aeb9bc1e4318168e5f6f1927819c2110b4c4ccad74312adc43c48
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/a1b.mp3
+  sha256: 597cace90c1e2457874611a87d3dafffd4d09a21aeb3a4916b388e9e4982686f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/a2a.mp3
+  sha256: da90f61e19afd85e9138484754445861fd69a616a33dd8a0963cee07c01fa5f2
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/a2b.mp3
+  sha256: 85ea348db4fce1c0a45763332682d8a3d64275e4d22685d71599f1c3fb5bd932
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/a3a.mp3
+  sha256: feac47772600e7300d12230d760adb4102963216025d556d11869288c304df60
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/a3b.mp3
+  sha256: 45b0d7e3117954d0176b2271187f7757f6867e29ca12a3175090e0c634248b31
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/c1.mp3
+  sha256: 08d06da2ec1606c1c8a51744c5f541a2ff802010fd12b2f15e65d45631e83649
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/d1q.mp3
+  sha256: 3da03edcf152d9782edd8b0358d804c309907dac080fe5795da982d9fe90a5fc
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/d1s.mp3
+  sha256: 81b765971d46d2b0751360967321f56de6c209b4c52aa688d8db6b35f568a466
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/d2q.mp3
+  sha256: 2cd6cee6a18dca839b4bf4a030606ab314ae47312eece9754b4bf98bdbf8664d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/d2s.mp3
+  sha256: c13e2545c0b6e08b9162aff476abd183a8ec67ba8557c731fde68f3ac0a9e595
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/d3q.mp3
+  sha256: d70f4c676bdd5aed806a055c02a073a509e57876e90df9486353a37bbd976bd6
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/d3s.mp3
+  sha256: 437a43572a83917aa7a6e8c31208039840220b735f3a13c5b87debdf22bc1dbe
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/f1.mp3
+  sha256: 0c372fd17b877bfa6423eb226c9002b6eef74e6b891251e11dc5a2bbfa86deb8
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/f2.mp3
+  sha256: 1cbc6fba7175cd21711cc56c3a47736bb666bea2b89ea8272139cdf30b80b468
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/h1.mp3
+  sha256: deba2c5e0bd5927038333781806fd58b236fd19aea5d2a2cb64d8fa4e4af8430
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/h2.mp3
+  sha256: 685df5ec2a7f91db3365b398eaab00fe719afc78ef9f3275d80c8970838b0cc6
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/h3.mp3
+  sha256: ac68751c4dbd79e49a95d61489deb54acafff4b7ba4587bd0b807876eed6b754
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/h4.mp3
+  sha256: 556f7006f182c671a345f5087d9f0d1d38b305b3c9e2e8bc9971a3dfe4dc9fb3
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/h5.mp3
+  sha256: b950888b35641fc0d1ce16c157b0999440f3535a6b059469d9b2370ab99e3b92
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/o3.mp3
+  sha256: 86f1d12abc10b83118ada5758163c6e75126c9428fa14d349a185022c3dd7e6c
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/q1.mp3
+  sha256: bc9cfd9fcdeb7242b8966add82db075b214afbf1148d519496230b09b8f94e01
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/q2.mp3
+  sha256: 2b680f7e41a906911d88186ee0d0a42533e59b5f6cfe6d146cde845c3629d8d8
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s09/q3.mp3
+  sha256: a8d22a04d7b7d3bdd6f17f3d44dd96c24e8693d93c3c723c1e6d14d4e5882635
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/a1a.mp3
+  sha256: 552ddceb78527fc767bca780ebef24d1dd5a3eed09ed691cd470143e9fd9c2fb
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/a1b.mp3
+  sha256: 950066b23d33e5b0c00e227f51a9633a337375adbeb6314d89ce34a5d30c449d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/a2a.mp3
+  sha256: 5df725842b24cf57ee80816a572f8bba23984e11b777b3de2fcfd49927fcbdf2
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/a2b.mp3
+  sha256: 5f51aef2e73d3fb20643605912eec69c01b69b08f4ff88e25d34b41f63dd7f0d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/a3a.mp3
+  sha256: a3194cb814e05865a1c25cb2fe02a429b579ca7d158e349d237c8a4e69adb2a3
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/a3b.mp3
+  sha256: f85d2710a3b31dc4a47192b5e70f661b313cac899f77411b2d16c19537dacd3a
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/c1.mp3
+  sha256: f737b8e07c9859afbe52316748f13b4ab2b7bf85fe161f4845e408133419d1c4
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/d1q.mp3
+  sha256: 131028a90affbc218cb6b8fa6f4b82b534d4e448e1020094bed9e3ac18f6bf2d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/d1s.mp3
+  sha256: 37b9209d5bb97679e65b5a03318eea90d55f480778f5ff1ef00d77883efea911
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/d2q.mp3
+  sha256: 39abb29f449630a642d7f156f8f1aab00e208a0012d0997d7d2509dd6f383ab6
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/d2s.mp3
+  sha256: 3c073ccce98214eb1bd1e42a1fc8a8d29bffd63610dcfd78c8caf134277dddba
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/d3q.mp3
+  sha256: 61e063b16e359134cd3c2ce0abddac12019ff49369dc4cee9ef4b5a13c5e8692
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/d3s.mp3
+  sha256: 2e07135427a9727454bea8333a4f5df8845985a3375534906995b32482b417bf
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/f1.mp3
+  sha256: 741c573599911776b3b21f2b66c79f59575bcf20376460d5600ad76fc9cd0ce8
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/f2.mp3
+  sha256: f18d41deb67ce4f9bd09f9c67ca30ad4ef76565e966c2eee1170be7950fcf887
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/h1.mp3
+  sha256: 6f47ad559a9b37dfeb83fffd8c578a4a0733069dae018d271b9e221d87050ef8
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/h2.mp3
+  sha256: 5c33795d5500e05d358a7a652e29e91cbf5d89b8d5e8f341e1e99fb92349a143
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/h3.mp3
+  sha256: dc4ec2f825b635813d664c72ad3fde9621d48378d814ab50b63f17690312540b
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/h4.mp3
+  sha256: 2d3830786b18a2ac369ca3c5d50c8bde77b11c45186dcb28c79f23677ebecc98
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/h5.mp3
+  sha256: 1d90d78da144219d9b3fec9553eadc1896fa0bae80ffe0ed978c3d6c0423d600
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/o3.mp3
+  sha256: e186b197bfb25b021898e5e3ea5b74589653bd2cff69ae447215deaf64dcf53c
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/q1.mp3
+  sha256: 3b71365beef1dd9a2eaec261972e8cbda455db468e7074027543b680bb87907e
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/q2.mp3
+  sha256: cbf3312ecbdd6a28b2b44587d553a043d4bd1f1f888d8b9236f0e3a62cf465b9
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/s10/q3.mp3
+  sha256: 212c08a71bc8e6d341b0ef03bd37dee46e2167e8286e19a6dab7f19d6ed82e6f
   origin: ai
   source: higgsfield text2speech_v2, elevenlabs engine
 - path: voice/wrong.mp3
