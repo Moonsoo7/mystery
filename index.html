@@ -1,0 +1,498 @@
+<!doctype html>
+<!-- PROTOTYPE - NOT FOR PRODUCTION
+     mystery: a one-case English listening mystery. Detective Dalton helps Betty find her lost cat, Biscuit.
+     Art, UI and fonts reused from the earlier detective game; new art (cat, clue room, found scene) and all voices made with Higgsfield. -->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>mystery</title>
+<style>
+@font-face{font-family:"Paperlogy";src:url("assets/fonts/Paperlogy-4Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Paperlogy";src:url("assets/fonts/Paperlogy-7Bold.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Paperlogy Display";src:url("assets/fonts/Paperlogy-6SemiBold.woff2") format("woff2");font-weight:400;font-display:swap}
+:root{--ground:#B6BDA5;--paper:#FBF4E6;--paper-2:#F4EAD4;--ink:#4A3628;--ink-soft:#7D6A58;--berry:#C96F86;--honey:#F2CF73;--moss:#5E8A63;--no:#C25B5B;
+  --f-display:"Paperlogy Display","Paperlogy",system-ui,sans-serif;--f-body:"Paperlogy",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box;scrollbar-width:none;-webkit-tap-highlight-color:transparent}
+*::-webkit-scrollbar{display:none}
+html,body{height:100%;margin:0}
+body{background:var(--ground);color:var(--ink);font-family:var(--f-body);font-size:14px;display:flex;justify-content:center;overflow:hidden}
+button{font:inherit;color:inherit;cursor:pointer}
+[hidden]{display:none!important}
+img{user-select:none;-webkit-user-drag:none}
+.app{position:relative;width:100%;max-width:430px;height:100%;display:flex;flex-direction:column;overflow:hidden;background:var(--paper)}
+@media (min-width:520px){body{align-items:center;padding-block:16px}.app{height:min(900px,calc(100% - 8px));border-radius:38px 42px 36px 44px/44px 36px 42px 38px}}
+.screen{position:absolute;inset:0;display:flex;flex-direction:column;overflow:hidden}
+
+/* buttons: the old game's crayon-paper buttons */
+.pill{--btn:url(assets/ui/buttons/cream-flat.png);--bw:15px;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:36px;padding:2px 12px;border:2px solid transparent;
+  border-image:var(--btn) 60 62 62 62 fill / var(--bw) calc(var(--bw) * 1.03) stretch;background:none;font-family:var(--f-display);font-size:14px;color:var(--ink);transition:transform .1s}
+.pill:active{transform:translateY(1px);filter:brightness(.94)}
+.pill.sm{--bw:12px;min-height:30px;padding:0 10px;font-size:12px}
+.pill.big{--btn:url(assets/ui/buttons/berry-flat.png);--bw:20px;min-height:52px;padding:4px 26px;font-size:17px;color:#fff}
+.pill.green{--btn:url(assets/ui/buttons/sage-flat.png);color:#fff}
+.pill.honey{--btn:url(assets/ui/buttons/honey-flat.png)}
+.pill[aria-pressed="true"]{--btn:url(assets/ui/buttons/sky-flat.png)}
+.pill:disabled{opacity:.45;cursor:default}
+.play-btn{flex:none;width:34px;height:34px;padding:0;border:0;background:url(assets/ui/icons/play.png) 58% 50%/46% auto no-repeat,url(assets/ui/buttons/round-cream.png) center/100% no-repeat}
+.play-btn.on{animation:pulse .9s ease-in-out infinite}
+.close-button{width:42px;height:42px;padding:0;border:0;background:url(assets/ui/close-button.png) center/contain no-repeat;filter:drop-shadow(0 3px 0 rgba(74,54,40,.3))}
+.top-back{position:absolute;left:10px;top:calc(10px + env(safe-area-inset-top,0px));z-index:20;width:42px;height:42px;padding:0;border:0;background:url(assets/ui/buttons/round-cream.png) center/100% no-repeat}
+.top-back svg{width:22px;height:22px}
+
+/* the speech bubble: paper frame with a pencil tail */
+.say{position:relative;z-index:6;width:min(92%,390px);margin:0 auto;padding:22px 20px 14px;font-size:18px;line-height:1.42;filter:drop-shadow(2px 4px 2px rgba(52,32,17,.2));animation:pop .38s cubic-bezier(.3,1.45,.5,1) both}
+.say::before{content:"";position:absolute;inset:0;z-index:-1;background:#FFF8E9;background-clip:padding-box;border:20px solid transparent;border-image:url(assets/ui/speech-paper-frame.png) 150 190 fill / 33px 42px / 0 stretch}
+.say.tail::after{content:"";position:absolute;left:50%;bottom:-21px;width:48px;height:30px;transform:translateX(-50%);background:url(assets/ui/speech-paper-tail-pencil.png) center/contain no-repeat}
+.say .who{display:flex;align-items:center;gap:8px;margin-bottom:4px;font-family:var(--f-display);font-size:13px;color:var(--ink-soft)}
+.say .who img{width:30px;height:30px;object-fit:contain}
+.say .en{margin:0}
+.say .en .w{border-radius:4px;transition:background .15s}
+.say .en .w.lit{background:rgba(242,207,115,.75)}
+.say .ko{margin:6px 0 0;font-size:15px;color:var(--ink-soft)}
+.say .foot{display:flex;align-items:center;gap:8px;margin-top:10px}
+.say .foot .grow{flex:1}
+.say .next{font-family:var(--f-display);font-size:13px;color:var(--berry);animation:bob 1s ease-in-out infinite}
+@keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:none;opacity:1}}
+@keyframes bob{50%{transform:translateY(-3px)}}
+@keyframes pulse{50%{transform:scale(1.12)}}
+
+/* home: the detective's office */
+#home{background:url(assets/places/detective-office-wide.jpg) 42% center/cover}
+#home .plate{margin:calc(18px + env(safe-area-inset-top,0px)) auto 0;padding:8px 22px;border:12px solid transparent;border-image:url(assets/ui/casekey/card.webp) 20 fill / 12px stretch;font-family:var(--f-display);font-size:20px}
+#home .say{margin-top:18px}
+.det-stand{position:absolute;left:50%;bottom:86px;width:min(70%,300px);transform:translateX(-50%);transform-origin:50% 100%}
+.det-stand.talk,.char.talk{animation:talk .5s ease-in-out infinite}
+@keyframes talk{50%{transform:translateX(-50%) scaleY(1.025) translateY(-2px)}}
+#betty2.talk{animation-name:talk2}
+@keyframes talk2{50%{transform:scaleY(1.025) translateY(-2px)}}
+.nav{position:relative;z-index:10;margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:8px 10px calc(11px + env(safe-area-inset-bottom,0px));background:var(--paper-2)}
+.nav .pill{--bw:20px;min-height:50px;font-size:15px}
+.nav .pill img{width:28px;height:28px;object-fit:contain}
+
+/* case list */
+#cases{background:var(--paper)}
+#cases h1{margin:calc(22px + env(safe-area-inset-top,0px)) 0 6px;text-align:center;font-family:var(--f-display);font-size:24px;font-weight:400}
+#cases .sub{margin:0 0 10px;text-align:center;color:var(--ink-soft)}
+.board{flex:1;overflow-y:auto;padding:12px 20px}
+.case-card{position:relative;display:flex;gap:14px;align-items:center;width:100%;padding:14px;border:12px solid transparent;border-image:url(assets/ui/casekey/card.webp) 20 fill / 12px stretch;background:none;text-align:left;transform:rotate(-.8deg);filter:drop-shadow(2px 4px 4px rgba(70,50,30,.2))}
+.case-card .pol{flex:none;width:96px;padding:6px 6px 16px;background:url(assets/ui/polaroid-card.webp) center/100% 100%;transform:rotate(3deg)}
+.case-card .pol img{display:block;width:100%;aspect-ratio:1;object-fit:cover;background:#E9DCC0}
+.case-card .no{font-family:var(--f-display);font-size:13px;color:var(--berry)}
+.case-card .t{margin:2px 0;font-family:var(--f-display);font-size:20px}
+.case-card .tk{color:var(--ink-soft)}
+.case-card .stamp{position:absolute;right:-6px;top:-16px;width:96px;transform:rotate(12deg)}
+.tack{position:absolute;left:50%;top:-14px;width:26px;transform:translateX(-50%)}
+
+/* talk scene */
+#talk{background:#3b2a1f}
+#talk .room{position:absolute;inset:0;background:url(assets/places/betty-home-higgsfield.png) 18% 100%/auto 100% no-repeat}
+#talk .room::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(30,20,10,.25),rgba(30,20,10,0) 40%)}
+.char{position:absolute;bottom:0;left:50%;height:58%;transform:translateX(-50%);transform-origin:50% 100%;filter:drop-shadow(0 6px 4px rgba(0,0,0,.25));transition:opacity .3s}
+#talk .bubble-slot{position:relative;z-index:6;margin-top:calc(62px + env(safe-area-inset-top,0px))}
+.ask{position:absolute;left:0;right:0;bottom:0;z-index:8;display:flex;flex-direction:column;gap:8px;padding:14px 16px calc(16px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,rgba(251,244,230,.97) 70%,rgba(251,244,230,0))}
+.ask .lead{margin:0 0 2px;text-align:center;font-family:var(--f-display);font-size:13px;color:var(--ink-soft)}
+.ask .pill{justify-content:flex-start;text-align:left;min-height:50px;font-size:15px;line-height:1.25}
+.ask .pill small{display:block;font-family:var(--f-body);font-size:12px;color:var(--ink-soft)}
+.tap-cue{position:absolute;inset:0;z-index:5}
+
+/* investigation */
+#inv{background:var(--paper)}
+.inv-head{display:flex;align-items:center;gap:8px;padding:calc(12px + env(safe-area-inset-top,0px)) 12px 8px 62px;min-height:62px}
+.inv-head h2{flex:1;margin:0;font-family:var(--f-display);font-size:18px;font-weight:400}
+.count{display:flex;align-items:center;gap:4px;font-family:var(--f-display);font-size:15px}
+.count img{width:22px;height:22px;opacity:.25}
+.count img.got{opacity:1}
+.art-wrap{position:relative;flex:1;min-height:0;display:flex;align-items:center;overflow-x:auto;overflow-y:hidden;touch-action:pan-x;background:#2b1e15}
+.art{position:relative;flex:none;height:var(--art-h,100%);aspect-ratio:1344/752}
+.art>img{display:block;height:100%;width:100%}
+.spot{position:absolute;border:0;background:none;padding:0;border-radius:50%}
+.spot.got{border:4px solid rgba(201,111,134,.9);box-shadow:0 0 0 2px rgba(255,248,233,.6);border-radius:46% 54% 50% 50%/52% 46% 54% 48%}
+.spot.got::after{content:"✓";position:absolute;right:-8px;top:-10px;width:28px;height:28px;border-radius:50%;background:var(--berry);color:#fff;font:700 17px/28px var(--f-body);text-align:center;pointer-events:none}
+.spot.looked::after{content:"";position:absolute;left:50%;top:50%;width:34px;height:34px;transform:translate(-50%,-50%);background:url(assets/ui/crayon-x-1.png) center/contain no-repeat;opacity:.55;pointer-events:none}
+.spot.hint{animation:glow 1.2s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 0 6px rgba(242,207,115,.8),0 0 28px 10px rgba(242,207,115,.6)}}
+.ring{position:absolute;width:70px;height:70px;margin:-35px 0 0 -35px;border:4px solid var(--honey);border-radius:50%;pointer-events:none;animation:ring .5s ease-out forwards}
+@keyframes ring{from{transform:scale(.3);opacity:1}to{transform:scale(1.3);opacity:0}}
+.swipe-hint{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);padding:5px 14px;border-radius:14px;background:rgba(74,54,40,.7);color:#fff;font-size:13px;white-space:nowrap;pointer-events:none;animation:fade 4s forwards}
+@keyframes fade{0%,70%{opacity:1}100%{opacity:0}}
+.inv-low{position:relative;flex:1 0 auto;min-height:212px;padding:14px 0 calc(12px + env(safe-area-inset-bottom,0px));background:var(--paper-2)}
+.inv-low .say{margin-top:4px}
+.inv-low .go{display:flex;justify-content:center;margin-top:12px}
+.inv-tip{margin:24px 24px 0;text-align:center;color:var(--ink-soft);font-size:15px;line-height:1.5}
+
+/* deduction board */
+#ded{background:url(assets/ui/corkboard-cork.webp) center/240px repeat}
+#ded h2{margin:calc(14px + env(safe-area-inset-top,0px)) 0 0;padding-left:62px;min-height:48px;display:flex;align-items:center;font-family:var(--f-display);font-size:20px;font-weight:400;color:#fff;text-shadow:0 2px 0 rgba(74,54,40,.5)}
+.steps{display:flex;gap:6px;justify-content:center;margin:4px 0 8px}
+.steps i{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.5);border:2px solid var(--ink)}
+.steps i.done{background:var(--moss)}.steps i.now{background:var(--honey)}
+.note{position:relative;width:min(88%,360px);margin:18px auto 0;padding:22px 18px 18px;border:11px solid transparent;border-image:url(assets/ui/casekey/note-yellow.webp) 22 fill / 11px stretch;transform:rotate(-.8deg);filter:drop-shadow(2px 5px 4px rgba(50,30,15,.3))}
+.note .tape{position:absolute;left:50%;top:-22px;width:90px;transform:translateX(-50%) rotate(-3deg)}
+.note .sent{margin:0;font-size:20px;line-height:1.5;text-align:center}
+.blank{display:inline-block;min-width:96px;border-bottom:3px solid var(--ink);color:var(--berry);font-family:var(--f-display)}
+.note .sk{margin:6px 0 0;text-align:center;color:var(--ink-soft)}
+.mark{position:absolute;right:-8px;top:-18px;width:64px;animation:pop .3s both}
+.opts{display:flex;flex-direction:column;gap:10px;width:min(80%,320px);margin:18px auto 0}
+.opts .pill{--bw:18px;min-height:52px;font-size:17px}
+.opts .pill.ok{--btn:url(assets/ui/buttons/sage-flat.png);color:#fff}
+.opts .pill.bad{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+#ded .say{margin-top:8px}
+
+/* finale */
+#fin{background:#3b2a1f}
+#fin .room{position:absolute;inset:0;background:url(assets/new/betty-home-clue.png) 14% 100%/auto 100% no-repeat}
+#fin .basket-btn{position:absolute;z-index:4;border:0;background:none;border-radius:50%;animation:glow 1.2s ease-in-out infinite}
+.found{position:absolute;left:50%;top:44%;z-index:7;width:min(84%,340px);padding:10px 10px 34px;background:url(assets/ui/polaroid-card.webp) center/100% 100%;transform:translate(-50%,-50%) rotate(-2deg);animation:drop .6s cubic-bezier(.3,1.4,.5,1) both;filter:drop-shadow(3px 8px 6px rgba(0,0,0,.35))}
+.found img{display:block;width:100%}
+@keyframes drop{from{transform:translate(-50%,-90%) rotate(-12deg);opacity:0}}
+.done-stamp{position:absolute;right:8%;top:16%;z-index:9;width:min(46%,190px);animation:stamp .4s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes stamp{from{transform:scale(2.6) rotate(-25deg);opacity:0}to{transform:rotate(-12deg);opacity:1}}
+#fin .low{position:absolute;left:0;right:0;bottom:0;z-index:8;padding:0 0 calc(14px + env(safe-area-inset-bottom,0px))}
+#fin .go{display:flex;justify-content:center;margin-top:10px}
+.cat-hop{position:absolute;z-index:8;width:110px;animation:hop .6s ease-in-out infinite alternate}
+@keyframes hop{to{transform:translateY(-12px) rotate(4deg)}}
+
+.modal{position:absolute;inset:0;z-index:40;display:grid;place-items:center;padding:16px;background:rgba(74,54,40,.38)}
+.mcard{width:100%;max-width:340px;display:flex;flex-direction:column;align-items:center;gap:12px;padding:20px 18px 16px;background:var(--paper);border:3px solid var(--ink);border-radius:26px 30px 24px 32px/30px 24px 32px 26px;box-shadow:5px 6px 0 rgba(74,54,40,.25);text-align:center}
+.mcard p{margin:0;font-family:var(--f-display);font-size:17px}
+.mcard .s{font-family:var(--f-body);font-size:14px;color:var(--ink-soft)}
+.mcard .pill{width:100%}
+#checkOut{position:fixed;left:0;bottom:0;z-index:99;margin:0;padding:4px;background:#fff;font:11px monospace}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <audio id="vo" preload="auto"></audio>
+
+  <!-- HOME: the detective's office -->
+  <section class="screen" id="home">
+    <div class="plate">탐정 사무소</div>
+    <div class="bubble-slot" id="homeSay"></div>
+    <img class="det-stand" id="homeDet" src="assets/characters/detective-wave.png" alt="탐정 달튼">
+    <nav class="nav">
+      <button class="pill" type="button" id="navHome" aria-pressed="true"><img src="assets/ui/nav/home-house.png" alt="">홈</button>
+      <button class="pill" type="button" id="navCases"><img src="assets/ui/nav/case-magnifier.png" alt="">사건</button>
+    </nav>
+  </section>
+
+  <!-- CASE LIST: one case -->
+  <section class="screen" id="cases" hidden>
+    <h1>사건 목록</h1>
+    <p class="sub">해결할 사건을 골라 주세요</p>
+    <div class="board">
+      <button class="case-card" type="button" id="case1">
+        <img class="tack" src="assets/ui/tack-red.webp" alt="">
+        <span class="pol"><img src="assets/new/biscuit.png" alt=""></span>
+        <span><span class="no">CASE 1</span><span class="t" style="display:block">The Missing Cat</span><span class="tk">사라진 고양이 비스킷</span></span>
+        <img class="stamp" id="case1Stamp" src="assets/ui/complete-stamp.png" alt="해결" hidden>
+      </button>
+    </div>
+    <nav class="nav">
+      <button class="pill" type="button" id="navHome2"><img src="assets/ui/nav/home-house.png" alt="">홈</button>
+      <button class="pill" type="button" aria-pressed="true"><img src="assets/ui/nav/case-magnifier.png" alt="">사건</button>
+    </nav>
+  </section>
+
+  <!-- TALK: Betty, one question -->
+  <section class="screen" id="talk" hidden>
+    <div class="room"></div>
+    <img class="char" id="betty" src="assets/characters/betty-higgsfield.png" alt="베티">
+    <div class="tap-cue" id="tapCue"></div>
+    <div class="bubble-slot" id="talkSay"></div>
+    <div class="ask" id="ask" hidden></div>
+  </section>
+
+  <!-- INVESTIGATION: Betty's house -->
+  <section class="screen" id="inv" hidden>
+    <div class="inv-head"><h2>베티의 집</h2><span class="count" id="count"></span></div>
+    <div class="art-wrap" id="artWrap"><div class="art" id="art"><img src="assets/new/betty-home-clue.png" alt="베티의 집"></div></div>
+    <div class="inv-low" id="invLow"></div>
+  </section>
+
+  <!-- DEDUCTION -->
+  <section class="screen" id="ded" hidden>
+    <h2>Deduction · 추리하기</h2>
+    <div class="steps" id="steps"></div>
+    <div class="bubble-slot" id="dedSay"></div>
+    <div class="note" id="note"><img class="tape" src="assets/ui/casekey/tape.webp" alt=""><p class="sent" id="sent"></p><p class="sk" id="sentKo" hidden></p></div>
+    <div class="opts" id="opts"></div>
+  </section>
+
+  <!-- FINALE -->
+  <section class="screen" id="fin" hidden>
+    <div class="room"></div>
+    <img class="char" id="betty2" src="assets/characters/betty-higgsfield.png" alt="베티" style="left:auto;right:-14%;height:42%;transform:none">
+    <button class="basket-btn" id="basketBtn" type="button" aria-label="소풍 바구니 열기"></button>
+    <div class="low"><div class="bubble-slot" id="finSay"></div><div class="go" id="finGo" hidden><button class="pill big" type="button" id="toOffice">사무소로 돌아가기</button></div></div>
+  </section>
+
+  <button class="top-back" type="button" id="back" aria-label="뒤로" hidden><svg viewBox="0 0 24 24"><path d="M14.5 5.5 L8 12 L14.5 18.5" fill="none" stroke="#4A3628" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+  <div class="modal" id="leave" hidden><div class="mcard" role="alertdialog">
+    <p>사건 목록으로 나갈까요?</p><p class="s">다시 들어오면 사건을 처음부터 시작해요.</p>
+    <button class="pill big green" type="button" id="leaveStay">계속 조사하기</button>
+    <button class="pill sm" type="button" id="leaveGo">사건 목록으로</button>
+  </div></div>
+</div>
+
+<script src="config.js"></script>
+<script src="tune.js"></script>
+<script>
+/* PROTOTYPE - NOT FOR PRODUCTION */
+(function(){
+'use strict';
+var tune=new Proxy({},{get:function(_,k){var c=window.CONFIG[k];return c?c.value:undefined}});
+var $=function(id){return document.getElementById(id)};
+var SAVE='mystery.v1',save={solved:false};
+try{save=Object.assign(save,JSON.parse(localStorage.getItem(SAVE)||'{}'))}catch(e){}
+function store(){try{localStorage.setItem(SAVE,JSON.stringify(save))}catch(e){}}
+
+/* ---------- the script: every line has its American-English voice file and a Korean translation ---------- */
+var D={name:'Dalton',icon:'assets/ui/icons-v2/detective.png'},B={name:'Betty',icon:'assets/characters/betty-higgsfield.png'};
+var L={
+  o1:[D,"Hello! I'm Dalton, the detective of Acorn Hollow.",'안녕! 나는 도토리 마을의 탐정, 달튼이야.'],
+  o2:[D,"Someone needs our help today. Let's check the case list.",'오늘 누군가 우리의 도움이 필요해. 사건 목록을 확인해 보자.'],
+  o3:[D,'Great job! We found Biscuit together.','잘했어! 우리가 함께 비스킷을 찾았어.'],
+  c1:[B,'Detective Dalton! My cat, Biscuit, is missing!','달튼 탐정님! 우리 고양이 비스킷이 사라졌어요!'],
+  c2:[D,"Don't worry, Betty. I'll find her.",'걱정 마세요, 베티. 제가 찾아 드릴게요.'],
+  c3:[D,'I can ask Betty only one question. What should I ask?','베티에게는 질문을 딱 한 번만 할 수 있어. 무엇을 물어볼까?'],
+  q1:[D,'When did you last see Biscuit?','비스킷을 마지막으로 본 게 언제예요?'],
+  q2:[D,'Where does Biscuit like to sleep?','비스킷은 어디서 자는 걸 좋아해요?'],
+  q3:[D,'Did you open the window today?','오늘 창문을 열었나요?'],
+  a1a:[B,'This morning. She was playing with my red yarn.','오늘 아침이요. 제 빨간 털실을 가지고 놀고 있었어요.'],
+  a1b:[B,'Then I put the picnic basket on the table. After that, she was gone.','그다음에 소풍 바구니를 탁자에 올려 두었어요. 그 뒤로 비스킷이 사라졌어요.'],
+  a2a:[B,'She loves small, soft places. Baskets are her favorite!','작고 푹신한 곳을 좋아해요. 바구니를 제일 좋아하죠!'],
+  a2b:[B,"But she isn't in her bed by the window.",'그런데 창가에 있는 자기 침대에는 없어요.'],
+  a3a:[B,"No, I didn't. The window was closed all day.",'아니요, 안 열었어요. 창문은 하루 종일 닫혀 있었어요.'],
+  a3b:[B,'So Biscuit is still in the house, I think.','그러니까 비스킷은 아직 집 안에 있는 것 같아요.'],
+  c4:[D,"Thank you, Betty. Now let's look around the house.",'고마워요, 베티. 이제 집 안을 둘러볼게요.'],
+  hwin:[D,"The window is closed. Biscuit didn't go outside.",'창문이 닫혀 있어. 비스킷은 밖으로 나가지 않았어.'],
+  hyarn:[D,'There is red yarn on the floor. It goes to the table.','바닥에 빨간 털실이 있어. 털실이 탁자 쪽으로 이어져 있어.'],
+  hbask:[D,'The cloth on the picnic basket is moving a little.','소풍 바구니 위의 천이 조금씩 움직이고 있어.'],
+  hchair:[D,'There is nothing under the rocking chair.','흔들의자 아래에는 아무것도 없어.'],
+  hshelf:[D,'The honey jars are too high for a small cat.','꿀단지는 작은 고양이에게 너무 높이 있어.'],
+  hdone:[D,"I found three clues. Let's put them together!",'단서를 세 개 찾았어. 이제 맞춰 보자!'],
+  d1q:[D,'Did Biscuit go outside?','비스킷은 밖으로 나갔을까?'],
+  d2q:[D,'Where does the red yarn go?','빨간 털실은 어디로 이어질까?'],
+  d3q:[D,'So, where is Biscuit?','그럼, 비스킷은 어디 있을까?'],
+  d1s:[D,'Biscuit stayed inside the house.','비스킷은 집 안에 있었어.'],
+  d2s:[D,'The red yarn goes to the table.','빨간 털실은 탁자로 이어져.'],
+  d3s:[D,'Biscuit is in the picnic basket.','비스킷은 소풍 바구니 안에 있어.'],
+  wrong:[D,'Hmm, not quite. Look at the clues again.','음, 그게 아니야. 단서를 다시 생각해 봐.'],
+  f1:[D,"Biscuit is in the picnic basket! Let's open it.",'비스킷은 소풍 바구니 안에 있어! 열어 보자.'],
+  f2:[B,'Biscuit! There you are! Thank you so much, Detective Dalton!','비스킷! 거기 있었구나! 정말 고마워요, 달튼 탐정님!'],
+  f3:[D,"You're welcome, Betty. Case closed!",'천만에요, 베티. 사건 해결!']
+};
+
+/* ---------- sound ---------- */
+var vo=$('vo'),slow=false,showKo=false,AC=null,sfx={};
+['note-correct.mp3','note-retry.mp3','stamp.mp3','discovery-marimba.wav','camera-shutter.mp3','ui-close.mp3','word-place.wav'].forEach(function(f){var a=new Audio('audio/'+f);a.preload='auto';sfx[f.split('.')[0]]=a});
+function play(n){var a=sfx[n];if(!a)return;try{a.currentTime=0;a.volume=tune.sfx_volume;a.play().catch(function(){})}catch(e){}}
+// a short synthesized meow when Biscuit is found (no recorded cat sound in the pack)
+function meow(){try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();var t=AC.currentTime,o=AC.createOscillator(),f=AC.createBiquadFilter(),g=AC.createGain();
+  o.type='sawtooth';o.frequency.setValueAtTime(520,t);o.frequency.linearRampToValueAtTime(880,t+.18);o.frequency.linearRampToValueAtTime(600,t+.55);
+  f.type='bandpass';f.frequency.setValueAtTime(900,t);f.frequency.linearRampToValueAtTime(1800,t+.2);f.frequency.linearRampToValueAtTime(1000,t+.55);f.Q.value=4;
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.35*tune.sfx_volume,t+.06);g.gain.linearRampToValueAtTime(0,t+.6);
+  o.connect(f);f.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+.65)}catch(e){}}
+var voiceEnd=null,litTimer=0,speaking=null;
+function stopVoice(){try{vo.pause()}catch(e){}if(window.speechSynthesis)speechSynthesis.cancel();clearInterval(litTimer);if(speaking)speaking.classList.remove('talk');speaking=null;document.querySelectorAll('.play-btn.on').forEach(function(b){b.classList.remove('on')})}
+// plays the recorded voice; if the file cannot play, an en-US browser voice reads the line instead
+function speak(id,btn,who,done){
+  if(window.__fast){stopVoice();if(done)setTimeout(done,5);return}
+  stopVoice();var line=L[id],words=btn?btn.closest('.say').querySelectorAll('.w'):[];
+  if(btn)btn.classList.add('on');speaking=who||null;if(speaking)speaking.classList.add('talk');
+  var finished=false;function end(){if(finished)return;finished=true;clearInterval(litTimer);words.forEach&&words.forEach(function(w){w.classList.remove('lit')});if(btn)btn.classList.remove('on');if(speaking)speaking.classList.remove('talk');speaking=null;if(done)done()}
+  function lightUp(dur){if(!words.length)return;var i=0,step=Math.max(120,dur*1000/words.length);clearInterval(litTimer);
+    litTimer=setInterval(function(){words.forEach(function(w,k){w.classList.toggle('lit',k===i)});i++;if(i>words.length){clearInterval(litTimer);words.forEach(function(w){w.classList.remove('lit')})}},step)}
+  function fallback(){if(!window.speechSynthesis){setTimeout(end,1500);return}var u=new SpeechSynthesisUtterance(line[1]);u.lang='en-US';
+    var v=speechSynthesis.getVoices().filter(function(x){return /en[-_]US/i.test(x.lang)});if(v.length)u.voice=v[0];u.rate=slow?tune.slow_rate:1;u.volume=tune.voice_volume;u.onend=end;u.onerror=end;speechSynthesis.speak(u);lightUp(line[1].split(' ').length*.38/(u.rate))}
+  vo.onended=end;vo.onerror=null;vo.src='voice/'+id+'.mp3';vo.playbackRate=slow?tune.slow_rate:1;vo.volume=tune.voice_volume;
+  vo.onloadedmetadata=function(){lightUp(vo.duration/vo.playbackRate)};
+  var p=vo.play();if(p&&p.catch)p.catch(function(err){if(err&&err.name==='NotAllowedError'){end();return}fallback()});
+}
+
+/* ---------- the bubble: English line, word highlight, replay, slow, 해석 ---------- */
+function bubble(slot,id,opt){
+  opt=opt||{};var line=L[id],s=document.createElement('div');s.className='say'+(opt.tail?' tail':'');
+  s.innerHTML='<div class="who"><img src="'+line[0].icon+'" alt="">'+line[0].name+'</div><p class="en">'+line[1].split(' ').map(function(w){return '<span class="w">'+w+'</span>'}).join(' ')+'</p>'+
+    '<p class="ko"'+(showKo?'':' hidden')+'>'+line[2]+'</p><div class="foot"><button class="play-btn" type="button" aria-label="다시 듣기"></button>'+
+    '<button class="pill sm" type="button" data-slow aria-pressed="'+slow+'">천천히</button><button class="pill sm" type="button" data-ko aria-pressed="'+showKo+'">해석</button><span class="grow"></span>'+(opt.next?'<span class="next">탭해서 계속 ▸</span>':'')+'</div>';
+  slot.innerHTML='';slot.appendChild(s);
+  var pb=s.querySelector('.play-btn');
+  pb.onclick=function(e){e.stopPropagation();speak(id,pb,opt.who)};
+  s.querySelector('[data-slow]').onclick=function(e){e.stopPropagation();slow=!slow;this.setAttribute('aria-pressed',slow);speak(id,pb,opt.who)};
+  s.querySelector('[data-ko]').onclick=function(e){e.stopPropagation();showKo=!showKo;this.setAttribute('aria-pressed',showKo);s.querySelector('.ko').hidden=!showKo};
+  if(opt.next){s.onclick=function(e){if(e.target.closest('button'))return;opt.next()}}
+  speak(id,pb,opt.who,opt.next&&tune.auto_next?function(){setTimeout(function(){if(s.isConnected)opt.next()},tune.auto_next_gap*1000)}:opt.after);
+  return s;
+}
+// plays lines one after another; the player taps to go on
+function sequence(slot,ids,who,done,tapLayer){
+  var i=0;function step(){if(i>=ids.length){if(tapLayer)tapLayer.onclick=null;done&&done();return}
+    var id=ids[i++],w=typeof who==='function'?who(id):who;bubble(slot,id,{tail:true,who:w,next:step});if(tapLayer)tapLayer.onclick=step}
+  step();
+}
+
+/* ---------- screens ---------- */
+var cur='home';
+function show(name){stopVoice();['home','cases','talk','inv','ded','fin'].forEach(function(n){$(n).hidden=n!==name});cur=name;$('back').hidden=!(name==='talk'||name==='inv'||name==='ded');}
+function goHome(again){show('home');$('homeDet').src='assets/characters/detective-wave.png';
+  var det=$('homeDet');sequence($('homeSay'),again?['o3']:['o1','o2'],det,function(){bubble($('homeSay'),again?'o3':'o2',{tail:true,who:det})})}
+function goCases(){show('cases');$('case1Stamp').hidden=!save.solved;play('ui-close')}
+$('navCases').onclick=goCases;$('navHome').onclick=function(){goHome(false)};$('navHome2').onclick=function(){goHome(false)};
+$('case1').onclick=function(){startCase()};
+$('back').onclick=function(){stopVoice();$('leave').hidden=false};
+$('leaveStay').onclick=function(){$('leave').hidden=true};
+$('leaveGo').onclick=function(){$('leave').hidden=true;play('ui-close');goCases()};
+
+/* ---------- the case ---------- */
+var st;
+function startCase(){
+  st={asked:null,found:{},looked:{},step:0,lastFind:Date.now()};
+  if(tune.unlock_all){st.found={win:1,yarn:1,bask:1};goDeduce();return}
+  show('talk');$('ask').hidden=true;var bet=$('betty');
+  sequence($('talkSay'),['c1','c2','c3'],function(id){return L[id][0]===B?bet:null},askQuestion,$('tapCue'));
+}
+var QS=[['q1','When did you last see Biscuit?','비스킷을 마지막으로 본 게 언제예요?',['a1a','a1b']],
+        ['q2','Where does Biscuit like to sleep?','비스킷은 어디서 자는 걸 좋아해요?',['a2a','a2b']],
+        ['q3','Did you open the window today?','오늘 창문을 열었나요?',['a3a','a3b']]];
+function askQuestion(){
+  var a=$('ask');a.hidden=false;a.innerHTML='<p class="lead">질문은 한 번만 할 수 있어요</p>';
+  QS.forEach(function(q){var b=document.createElement('button');b.className='pill';b.type='button';b.innerHTML='<span>'+q[1]+'<small>'+q[2]+'</small></span>';
+    b.onclick=function(){if(st.asked)return;st.asked=q[0];a.hidden=true;play('word-place');var bet=$('betty');
+      sequence($('talkSay'),[q[0]].concat(q[3]).concat(['c4']),function(id){return L[id][0]===B?bet:null},goInvestigate,$('tapCue'))};
+    a.appendChild(b)});
+}
+// clue spots on betty-home-clue.png (percent of the picture)
+var SPOTS=[{k:'win',line:'hwin',clue:1,x:65.5,y:25,w:18.5,h:35},
+           {k:'yarn',line:'hyarn',clue:1,x:62,y:80,w:22,h:17},
+           {k:'bask',line:'hbask',clue:1,x:14.5,y:46,w:13,h:20},
+           {k:'chair',line:'hchair',clue:0,x:84,y:56,w:12,h:24},
+           {k:'shelf',line:'hshelf',clue:0,x:86,y:33,w:14,h:16}];
+var hintTimer=0;
+function goInvestigate(){
+  show('inv');var art=$('art');art.querySelectorAll('.spot,.ring,.swipe-hint').forEach(function(n){n.remove()});
+  SPOTS.forEach(function(s){var b=document.createElement('button');b.className='spot';b.type='button';b.dataset.k=s.k;b.setAttribute('aria-label','살펴보기');
+    b.style.cssText='left:'+s.x+'%;top:'+s.y+'%;width:'+s.w+'%;height:'+s.h+'%';
+    b.onclick=function(e){look(s,b,e)};art.appendChild(b)});
+  var h=document.createElement('div');h.className='swipe-hint';h.textContent='← 옆으로 밀어서 둘러보기 →';$('artWrap').appendChild(h);
+  var wr=$('artWrap');var avail=$('inv').clientHeight-$('inv').querySelector('.inv-head').offsetHeight-212;var ah=Math.max(160,Math.min(avail,wr.clientWidth*tune.art_zoom*752/1344));$('art').style.setProperty('--art-h',ah+'px');wr.style.flex='none';wr.style.height=ah+'px';wr.scrollLeft=($('art').offsetWidth-wr.clientWidth)*.5;
+  $('invLow').innerHTML='<p class="inv-tip">수상한 곳을 눌러 단서를 찾아 보세요.<br>단서 '+tune.clues_needed+'개를 찾으면 추리할 수 있어요.</p>';
+  updateCount();st.lastFind=Date.now();clearInterval(hintTimer);hintTimer=setInterval(hintTick,1000);
+}
+function hintTick(){if(cur!=='inv'){clearInterval(hintTimer);return}
+  if(Date.now()-st.lastFind<tune.hint_delay*1000||document.querySelector('.spot.hint'))return;
+  var s=SPOTS.filter(function(s){return s.clue&&!st.found[s.k]})[0];if(s){var b=document.querySelector('.spot[data-k="'+s.k+'"]');b.classList.add('hint');
+    var wrap=$('artWrap');wrap.scrollTo({left:b.offsetLeft+b.offsetWidth/2-wrap.clientWidth/2,behavior:'smooth'})}}
+function nFound(){return Object.keys(st.found).length}
+function updateCount(){var n=Math.min(3,tune.clues_needed),h='';for(var i=0;i<n;i++)h+='<img src="assets/ui/icons/magnifier.png" class="'+(i<nFound()?'got':'')+'" alt="">';$('count').innerHTML=h+' '+Math.min(nFound(),n)+'/'+n}
+function look(s,b,e){
+  var r=document.createElement('div');r.className='ring';var ar=$('art').getBoundingClientRect();r.style.left=(e.clientX-ar.left)+'px';r.style.top=(e.clientY-ar.top)+'px';$('art').appendChild(r);setTimeout(function(){r.remove()},600);
+  b.classList.remove('hint');
+  if(s.clue&&!st.found[s.k]){st.found[s.k]=1;st.lastFind=Date.now();b.classList.add('got');play('discovery-marimba');updateCount()}
+  else if(!s.clue){st.looked[s.k]=1;b.classList.add('looked')}
+  var low=$('invLow'),ready=nFound()>=tune.clues_needed;
+  // once enough clues are found, 추리하기 shows at once (it never waits on a voice); Dalton's summing-up line follows the clue line
+  var first=ready&&!st.saidDone;
+  bubble(low,s.line,{after:first?function(){if(cur==='inv'&&!st.saidDone){st.saidDone=true;bubble(low,'hdone',{});goBtn()}}:null});
+  if(ready)goBtn();
+}
+function goBtn(){var low=$('invLow');if(low.querySelector('.go'))return;var g=document.createElement('div');g.className='go';g.innerHTML='<button class="pill big" type="button">추리하기</button>';g.firstChild.onclick=goDeduce;low.appendChild(g)}
+
+/* ---------- deduction: three fill-in sentences ---------- */
+var DQ=[{q:'d1q',s:'d1s',pre:'Biscuit stayed ',post:' the house.',ko:'비스킷은 집 ___ 있었다.',opts:['inside','outside'],ok:'inside'},
+        {q:'d2q',s:'d2s',pre:'The red yarn goes to the ',post:'.',ko:'빨간 털실은 ___(으)로 이어진다.',opts:['window','table','rocking chair'],ok:'table'},
+        {q:'d3q',s:'d3s',pre:'Biscuit is in the ',post:'.',ko:'비스킷은 ___ 안에 있다.',opts:['honey jar','yarn basket','picnic basket'],ok:'picnic basket'}];
+function goDeduce(){show('ded');st.step=0;askDeduce()}
+function askDeduce(){
+  var q=DQ[st.step];$('steps').innerHTML=DQ.map(function(_,i){return '<i class="'+(i<st.step?'done':i===st.step?'now':'')+'"></i>'}).join('');
+  bubble($('dedSay'),q.q,{tail:false});
+  $('sent').innerHTML=q.pre+'<span class="blank">&nbsp;?&nbsp;</span>'+q.post;$('sentKo').textContent=q.ko;$('sentKo').hidden=false;
+  $('note').querySelectorAll('.mark').forEach(function(m){m.remove()});
+  var o=$('opts');o.innerHTML='';
+  q.opts.forEach(function(t){var b=document.createElement('button');b.className='pill';b.type='button';b.textContent=t;
+    b.onclick=function(){if(o.dataset.lock)return;
+      if(t===q.ok){o.dataset.lock=1;b.classList.add('ok');play('note-correct');mark('o');$('sent').innerHTML=q.pre+'<span class="blank">'+t+'</span>'+q.post;
+        bubble($('dedSay'),q.s,{});
+        // the player moves on with a button, so a replay of the sentence never strands them
+        [].slice.call(o.children).forEach(function(x){if(x!==b)x.remove()});
+        var nx=document.createElement('button');nx.className='pill big';nx.type='button';nx.textContent=st.step<DQ.length-1?'다음 질문 ▸':'바구니를 열어 보자 ▸';
+        nx.onclick=function(){delete o.dataset.lock;st.step++;if(st.step<DQ.length)askDeduce();else goFinale()};o.appendChild(nx)}
+      else{b.classList.remove('bad');void b.offsetWidth;b.classList.add('bad');b.disabled=true;play('note-retry');mark('x');bubble($('dedSay'),'wrong',{})}};
+    o.appendChild(b)});
+}
+function mark(t){$('note').querySelectorAll('.mark').forEach(function(m){m.remove()});var m=document.createElement('img');m.className='mark';m.src='assets/ui/crayon-'+t+'-1.png';m.alt='';$('note').appendChild(m)}
+
+/* ---------- finale ---------- */
+function goFinale(){
+  show('fin');var room=$('fin').querySelector('.room');$('finGo').hidden=true;
+  $('fin').querySelectorAll('.found,.done-stamp,.cat-hop').forEach(function(n){n.remove()});
+  // the basket sits at 14.5%-27.5% x, 46%-66% y of the picture, which is drawn at full height from 14% across
+  requestAnimationFrame(function(){var W=$('fin').clientWidth,H=$('fin').clientHeight,iw=H*1344/752,ox=(W-iw)*.14;
+    var bb=$('basketBtn');bb.hidden=false;bb.style.cssText='left:'+(ox+iw*.135)+'px;top:'+(H*.44)+'px;width:'+(iw*.15)+'px;height:'+(H*.24)+'px';});
+  var bb=$('basketBtn');bb.onclick=null;
+  bubble($('finSay'),'f1',{tail:false,after:function(){}});
+  bb.onclick=function(){bb.onclick=null;bb.hidden=true;stopVoice();play('camera-shutter');setTimeout(meow,250);
+    var f=document.createElement('div');f.className='found';f.innerHTML='<img src="assets/new/biscuit-found.png" alt="바구니 속 비스킷">';$('fin').appendChild(f);
+    setTimeout(function(){sequence($('finSay'),['f2','f3'],function(id){return id==='f2'?$('betty2'):null},function(){
+      var s=document.createElement('img');s.className='done-stamp';s.src='assets/ui/complete-stamp.png';s.alt='사건 해결';$('fin').appendChild(s);play('stamp');
+      save.solved=true;store();$('finGo').hidden=false},null)},700)};
+}
+$('toOffice').onclick=function(){goHome(true)};
+
+/* ---------- start ---------- */
+// browsers block sound until the first touch, so the office line starts on the first tap
+var started=false;
+function begin(){if(started)return;started=true;goHome(false)}
+show('home');$('homeSay').innerHTML='<div class="say tail" style="text-align:center"><p class="en" style="margin:0">Tap to start</p><p class="ko" style="margin:4px 0 0">화면을 눌러 시작해요</p></div>';
+$('home').addEventListener('click',function(e){if(!started&&!e.target.closest('.nav')){begin()}});
+
+/* ---------- self check (?check=flow&at=home|cases|talk|ask|inv|ded|fin) for screenshots ---------- */
+var qs=location.search;
+// ?check=run clicks through the whole case with voices skipped, one wrong answer included, and reports where it stopped
+if(/[?&]check=run/.test(qs)){window.__fast=true;started=true;var log=[],ro=document.createElement('pre');ro.id='checkOut';document.body.appendChild(ro);
+  var q=function(s){return document.querySelector(s)},vis=function(id){return !$(id).hidden};
+  var steps=[
+    function(){goHome(false);return vis('home')},
+    function(){$('navCases').click();return vis('cases')},
+    function(){$('case1').click();return vis('talk')},
+    function(){$('tapCue').click();return true},function(){$('tapCue').click();return true},function(){$('tapCue').click();return !$('ask').hidden},
+    function(){$('ask').querySelectorAll('button')[0].click();return st.asked==='q1'},
+    function(){$('tapCue').click();return true},function(){$('tapCue').click();return true},function(){$('tapCue').click();return true},function(){$('tapCue').click();return vis('inv')},
+    function(){q('.spot[data-k=chair]').click();return st.looked.chair===1},
+    function(){q('.spot[data-k=win]').click();q('.spot[data-k=yarn]').click();q('.spot[data-k=bask]').click();return nFound()===3},
+    function(){var b=q('#invLow .go button');if(!b)return false;b.click();return vis('ded')},
+    function(){[].filter.call($('opts').children,function(b){return b.textContent==='outside'})[0].click();return st.step===0},
+    function(){[].filter.call($('opts').children,function(b){return b.textContent==='inside'})[0].click();return true},
+    function(){q('#opts .pill.big').click();return st.step===1},
+    function(){[].filter.call($('opts').children,function(b){return b.textContent==='table'})[0].click();return true},
+    function(){q('#opts .pill.big').click();return st.step===2},
+    function(){[].filter.call($('opts').children,function(b){return b.textContent==='picnic basket'})[0].click();return true},
+    function(){q('#opts .pill.big').click();return vis('fin')},
+    function(){$('basketBtn').click();return !!q('#fin .found')},
+    function(){var s=q('#finSay .say');if(s)s.click();return true},
+    function(){var s=q('#finSay .say');if(s)s.click();return true},
+    function(){return !$('finGo').hidden&&save.solved},
+    function(){$('toOffice').click();return vis('home')},
+    function(){$('navCases').click();return !$('case1Stamp').hidden}];
+  var i=0;(function next(){if(i>=steps.length){ro.textContent='run-check steps='+steps.length+' passed='+i+' errors=0';return}
+    var okv;try{okv=steps[i]()}catch(e){ro.textContent='run-check failed at step '+i+': '+e.message;return}
+    if(!okv){ro.textContent='run-check failed at step '+i;return}i++;setTimeout(next,1200)})()}
+if(/[?&]check=flow/.test(qs)){var at=(/[?&]at=(\w+)/.exec(qs)||[0,'home'])[1],out=document.createElement('pre');out.id='checkOut';started=true;showKo=/ko=1/.test(qs);
+  try{st={asked:null,found:{},looked:{},step:0,lastFind:Date.now()};
+    if(at==='home')goHome(false);if(at==='cases')goCases();
+    if(at==='talk'){show('talk');bubble($('talkSay'),'c1',{tail:true,next:function(){}})}
+    if(at==='ask'){show('talk');bubble($('talkSay'),'c3',{tail:true});askQuestion()}
+    if(at==='inv'){goInvestigate();if(/found=1/.test(qs)){look(SPOTS[1],document.querySelector('.spot[data-k=yarn]'),{clientX:0,clientY:0});look(SPOTS[0],document.querySelector('.spot[data-k=win]'),{clientX:0,clientY:0})}}
+    if(at==='ded'){goDeduce();var n=+(/step=(\d)/.exec(qs)||[0,0])[1];st.step=n;askDeduce();if(/answer=1/.test(qs))[].filter.call($('opts').children,function(b){return b.textContent===DQ[n].ok})[0].click()}
+    if(at==='fin'){goFinale();if(/open=1/.test(qs))setTimeout(function(){$('basketBtn').onclick()},100)}
+    var miss=[];Object.keys(L).forEach(function(k){var a=new Audio();a.preload='metadata';a.onerror=function(){miss.push(k);out.textContent='flow-check at='+at+' lines='+Object.keys(L).length+' missing-voice='+miss.join(',')};a.src='voice/'+k+'.mp3'});
+    out.textContent='flow-check at='+at+' lines='+Object.keys(L).length+' errors=0'}
+  catch(err){out.textContent='flow-check at='+at+' errors=1 '+err.message}
+  document.body.appendChild(out)}
+})();
+</script>
+</body>
+</html>

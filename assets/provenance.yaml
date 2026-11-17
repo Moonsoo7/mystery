@@ -1,0 +1,342 @@
+# Where each file came from, one entry per file.
+# Reused files come from the earlier detective game (claude.ai artifact Dfri7wy455nF3seGPHLqte), copied as they were.
+- path: assets/characters/betty-higgsfield.png
+  sha256: 4ef395e9bf20d31b75de6e7dc79b7fcfd32a89ad5a704a83cdd45f5c9f7f8d12
+  origin: you
+  source: earlier detective game
+- path: assets/characters/detective-higgsfield.png
+  sha256: ff1788b9f10594240e1c90ebf4cbcd9ea467cdcbc1b38024b253e755429f4e7d
+  origin: you
+  source: earlier detective game
+- path: assets/characters/detective-lens.png
+  sha256: 8c8333a1e6255d1703e808d55ea07e5374828264b198e2e15d5d42a0a526f12c
+  origin: you
+  source: earlier detective game
+- path: assets/characters/detective-point.png
+  sha256: 80d4130c016823ba040b8c05bffc4551066df778d33650da3587403b2fbb4a48
+  origin: you
+  source: earlier detective game
+- path: assets/characters/detective-thinking.png
+  sha256: ae93e8690077c9f43330636d9a2388fc24aa4066baaf47a258a695baed8114ac
+  origin: you
+  source: earlier detective game
+- path: assets/characters/detective-wave.png
+  sha256: 91a9bf4554c829426333c0a4e049cedc77e8597d415930e492f0cf3b8799c3a8
+  origin: you
+  source: earlier detective game
+- path: assets/fonts/Paperlogy-4Regular.woff2
+  sha256: ad469e33f2ee5f96ba7f3e5df09350daac0420c6a60264119da201eb1bbbfae9
+  origin: you
+  source: earlier detective game
+- path: assets/fonts/Paperlogy-6SemiBold.woff2
+  sha256: b1b59a791202385f16458b36b3a4bdc7e5accafa1cd8eaee1dfbb7e94cc9e8cb
+  origin: you
+  source: earlier detective game
+- path: assets/fonts/Paperlogy-7Bold.woff2
+  sha256: 390de733d213ad164d4089dbc93b8baf49b9bec8d33f49edcb06b60ab014d7cf
+  origin: you
+  source: earlier detective game
+- path: assets/new/betty-home-clue.png
+  sha256: 4e2added1fa01b66fb2606ac786453f98079ad738fc64635885b84b251e089ae
+  origin: ai
+  source: higgsfield gpt_image_2_6 (biscuit.png background removed with higgsfield image_background_remover)
+- path: assets/new/biscuit-found.png
+  sha256: 62df9eb71948deea19dbccc516e4d44bc076ec3996158edaac31878775006389
+  origin: ai
+  source: higgsfield gpt_image_2_6 (biscuit.png background removed with higgsfield image_background_remover)
+- path: assets/new/biscuit.png
+  sha256: 8302faf7be11ed05df40a5809583562e161efc7aa3f8c150beffd7d1e7fdc0e9
+  origin: ai
+  source: higgsfield gpt_image_2_6 (biscuit.png background removed with higgsfield image_background_remover)
+- path: assets/places/betty-home-floor.jpg
+  sha256: 5927ac3f6cdf74912126a78a378fb885529c431a93cc05b7f64966f9b5a44e4c
+  origin: you
+  source: earlier detective game
+- path: assets/places/betty-home-higgsfield.png
+  sha256: 3e179d79eb8fc3cb80e2d47e6d475c5250e15485e78989e6ae5b5207e38c52f1
+  origin: you
+  source: earlier detective game
+- path: assets/places/detective-office-wide.jpg
+  sha256: c828e209adebc4a7ee5c8b8663b6c5eaf23bdc645125763f359c2c24d0211c3f
+  origin: you
+  source: earlier detective game
+- path: assets/provenance.yaml
+  sha256: 8283248e20a81bd302d626429c0fcfc47d905dae5a79792b01c53c4718749255
+  origin: you
+  source: earlier detective game
+- path: assets/ui/buttons/berry-flat.png
+  sha256: b84ee27b335afec360c50322656e4275eee6aaf05910f62b3080a86a11e0a037
+  origin: you
+  source: earlier detective game
+- path: assets/ui/buttons/cream-flat.png
+  sha256: 385d5837a2570e4b9f66857404fbb608af5c543088a2159ca318779947e3257f
+  origin: you
+  source: earlier detective game
+- path: assets/ui/buttons/honey-flat.png
+  sha256: dfc8bf94e3b03b4118b0e3a4470240068739e9c635a9a0b0d6008530db5ac6f6
+  origin: you
+  source: earlier detective game
+- path: assets/ui/buttons/round-cream.png
+  sha256: 50ff7595fc6c20a7d1f14555baa39ceb0848fad41fa77cbc336a6df995d0f12a
+  origin: you
+  source: earlier detective game
+- path: assets/ui/buttons/sage-flat.png
+  sha256: a484823f0826a87bd81f54410a5d18cda4dbae06a0c569248d446d9e182d8f27
+  origin: you
+  source: earlier detective game
+- path: assets/ui/buttons/sky-flat.png
+  sha256: 62db25e35ed5ecee5cc36087fcee80172642dcaa6949147844d68bc23c0f1df4
+  origin: you
+  source: earlier detective game
+- path: assets/ui/casekey/card.webp
+  sha256: 6f478575edce987b8b7b881a5efca1d9ef7c575ca0ca4348031c884bc143e264
+  origin: you
+  source: earlier detective game
+- path: assets/ui/casekey/note-yellow.webp
+  sha256: a410e399a00b95924c95672e93a7c58b8aba646476d02367affac55351b6e25a
+  origin: you
+  source: earlier detective game
+- path: assets/ui/casekey/tape.webp
+  sha256: c30fa26698581356b94946ea46b43b39612151500ecebe775ef7b71eceb9eb8f
+  origin: you
+  source: earlier detective game
+- path: assets/ui/close-button.png
+  sha256: 0420cb5db3e5ad99cf44ed575e6ed862da589caaa1e04cfdb67cb9a9401273c8
+  origin: you
+  source: earlier detective game
+- path: assets/ui/complete-stamp.png
+  sha256: ef238c1c155a1104c1b10cd7156dd53823f52018d9fb52efa5ad354d2d2c5eee
+  origin: you
+  source: earlier detective game
+- path: assets/ui/corkboard-cork.webp
+  sha256: a12b41355c809f8e93a14cb281a7f18284f48e6b7e9d8686e99ec8ff72db2b92
+  origin: you
+  source: earlier detective game
+- path: assets/ui/corkboard-frame.webp
+  sha256: 16f046b31c61bbdca2d27645acccbef694548d660cc01838b6c852b392576d58
+  origin: you
+  source: earlier detective game
+- path: assets/ui/crayon-o-1.png
+  sha256: e0ad35e660579deffa13cad974484439bebb8bf2adfb16fa29e1a829a156c506
+  origin: you
+  source: earlier detective game
+- path: assets/ui/crayon-x-1.png
+  sha256: 47bbe6a2141d1c2d93e2440691a5955bc927d11e086b6a4e4025c822e72e8f75
+  origin: you
+  source: earlier detective game
+- path: assets/ui/icons-v2/acorn.png
+  sha256: aca23369865c48340ddc186862fb37866c3f489519c4841df0fe4d6cf5e6a81f
+  origin: you
+  source: earlier detective game
+- path: assets/ui/icons-v2/detective.png
+  sha256: ab76f2f8912cee480dbb90aebf75df8a51ecaf28eac8d897920365e388cd9d72
+  origin: you
+  source: earlier detective game
+- path: assets/ui/icons/magnifier.png
+  sha256: 0d72ba09089abdfff576135bf3aef5575142c5ca6e1451da882a9809e78a8dbe
+  origin: you
+  source: earlier detective game
+- path: assets/ui/icons/note.png
+  sha256: e4bde1d06296dd6e37755780fa298dcf1d977f6c06a04c29929296587b616040
+  origin: you
+  source: earlier detective game
+- path: assets/ui/icons/play.png
+  sha256: 5a159a59ddbb47f0ad83ffedc655213bc192aeacc440019dd89dda561ec96363
+  origin: you
+  source: earlier detective game
+- path: assets/ui/nav/case-magnifier.png
+  sha256: 507d6148bf5d750feaf05b051fc1244f41b735f5d251c3dea452d0321ccdf345
+  origin: you
+  source: earlier detective game
+- path: assets/ui/nav/home-house.png
+  sha256: 09afe4e83f1a0f0345cf7f0047757d150c00b082e30b8d975b52870277ea559e
+  origin: you
+  source: earlier detective game
+- path: assets/ui/nav/note.png
+  sha256: 4d6f4d4e9af48e380363df1bd3ad8a654602c61be0e38ebc8edcf3907b491996
+  origin: you
+  source: earlier detective game
+- path: assets/ui/nudge-bang.png
+  sha256: 1da9ad8889780cc375ab661aa27ba78ef37af629e70ce2f75b9e1818e0b0a989
+  origin: you
+  source: earlier detective game
+- path: assets/ui/polaroid-card.webp
+  sha256: 27d0e63798e2bc5eaadd5b09605a07f299c782f982f50d9491d3cbadb5b80861
+  origin: you
+  source: earlier detective game
+- path: assets/ui/speech-paper-frame.png
+  sha256: 04c5ddbf71214c40702c4a9346c15f0f83fe20da853d14bd404e99ed7dabc07b
+  origin: you
+  source: earlier detective game
+- path: assets/ui/speech-paper-tail-pencil.png
+  sha256: a8e4f04aaa54c4b5d0b8ca03495c72f987b36e0e235223c36469a8f90f0431be
+  origin: you
+  source: earlier detective game
+- path: assets/ui/star.png
+  sha256: 1fb72784bb76b43ef10287b448da9e2bb15a8f67a861d2b1e51bbd2a95d027e6
+  origin: you
+  source: earlier detective game
+- path: assets/ui/tack-red.webp
+  sha256: 0e4878e66b9f39192863802af41aeb48116c4087eb85ef980c8313fe7ec44490
+  origin: you
+  source: earlier detective game
+- path: assets/ui/tutorial-paw.png
+  sha256: 86da0061e7bdeee3f656a1fe19400e86989308669368ca29a47e63cddf06bec8
+  origin: you
+  source: earlier detective game
+- path: audio/camera-shutter.mp3
+  sha256: 2cfb785eb275971c91c25e9775b1a6ea728be16296feef821541c9dcd99cf77e
+  origin: you
+  source: earlier detective game
+- path: audio/discovery-marimba.wav
+  sha256: 23f259743b82fecee6ff29be9ec07c4fd99cf492bf396a0d95aabeb9f58a3c49
+  origin: you
+  source: earlier detective game
+- path: audio/note-correct.mp3
+  sha256: fd10cbfc1307979410e53fb9c9bee692ae4fd1096d4bac874ceabe28910d7f3c
+  origin: you
+  source: earlier detective game
+- path: audio/note-retry.mp3
+  sha256: 9972ec5018cf7b0ae9c9edec4cd361ddcd8850e5262c61a864c1ccd373054333
+  origin: you
+  source: earlier detective game
+- path: audio/stamp.mp3
+  sha256: 0ccfb034a31f5ad5f17e04dcc0905a30d3837e0792e0d146fd31fe6e2e6cd474
+  origin: you
+  source: earlier detective game
+- path: audio/ui-close.mp3
+  sha256: e0f2fb86cc5bd4bf710511cd32d47ba3204a21f472a63f30f7df4cdf1ca2c032
+  origin: you
+  source: earlier detective game
+- path: audio/word-place.wav
+  sha256: bf7a1ff4160d08a316e15cc16f02d261b87403e2fad200afb236bed00fddd26a
+  origin: you
+  source: earlier detective game
+- path: voice/a1a.mp3
+  sha256: 1e04f41d4c3efc302b9f63a0752e82685ddd554b418349537c040bf0c2360f66
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/a1b.mp3
+  sha256: b593a4b25bdbaa493c86736ab9c31ed53e5ccd52806e867bfe906289068d7b03
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/a2a.mp3
+  sha256: 96c6f36e940ca759a6385ffab0bd5148b1252f9ff65e20f8a2b5198ff6ad0d1f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/a2b.mp3
+  sha256: ea95e53aeb9be519e31a9c654de9ac1735f50b63e91053729c5fbcaaa980d7d4
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/a3a.mp3
+  sha256: b56258bcb738bef5db2f3746ffcdad38e779e82a8ecf559a1cdab7cb7d270a02
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/a3b.mp3
+  sha256: 34f7908296e90bf12cbc1b7d5ff364efdffd8b3dbc84fb39d52718d7e53d037f
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/c1.mp3
+  sha256: e2f7b128bb1b2060b1b215c97bbce0bcaf1256352bdaa4c5d027fc06538bc96b
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/c2.mp3
+  sha256: df3889e83d4e93623f89b926d299affd66ac1cb2a3091be6bd540110572226aa
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/c3.mp3
+  sha256: c725a82f3724259e8185ae8741abe28d2e7fb0d66b401e77a9d6e8fc5606a9f0
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/c4.mp3
+  sha256: e4230d215bd19b08e454a282a8afb41d660605030877917f5dcee93334f99396
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/d1q.mp3
+  sha256: ea78c96dc024c7fe2a88eaa365db380d392398b728eb6eb149477186f636037c
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/d1s.mp3
+  sha256: 47d22c4967fb16720589697b13e3ffa040966164b8ff844539dba885e19e0146
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/d2q.mp3
+  sha256: dca1f70d6dace419f68771b54d9ba88429b6330c927116ff571a0687562d78cc
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/d2s.mp3
+  sha256: b0f9a0012599563154652fcf2d94b050ac19ce6ab9cfe8cdea385c2b6965c996
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/d3q.mp3
+  sha256: aa0517682557faebacc74f5024b35e8ff7ce4b2efe04515dd37d4492f9154980
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/d3s.mp3
+  sha256: fac3b94277b780920c1db94ddaaf0a933e43c66a51ee261f64b4f3358aaab6d0
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/f1.mp3
+  sha256: fab7c402a981945548744323203bd1de5547da2f7a32e8e43ca3ef0d0f42134b
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/f2.mp3
+  sha256: 0b53b4d576b084eb39895ad49cc7e0a37dc39f0a8f5327cf9e15bf7b27dd3102
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/f3.mp3
+  sha256: 7973bd23a5d414a12f3728092092049a2d855f8b79e11fb0be7d106719e557fe
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/hbask.mp3
+  sha256: d7c63976de8700ed5b9309c91100258a3874404a931e92802c776e912b39403a
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/hchair.mp3
+  sha256: 633d116821b7c1756a8499fbfad5f8d3a4947f612138c4d2cc6d8ce8db0b4387
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/hdone.mp3
+  sha256: c91800ec90c4fb1b4b4ba8e4dae5249b8563266178042a9cd1c94434f3eb9c52
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/hshelf.mp3
+  sha256: 2dde1a2204ee8bdee6c2c0ddb08405a69fdce93bc2c3c66123449fc814f0b529
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/hwin.mp3
+  sha256: 66a15e61acbdb9187bf76bc2000fa90ee2cd64eaba8505e33780676f6bfe29c7
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/hyarn.mp3
+  sha256: 0ef87b8b61a784e3c958106daf1bc2764042ae693eb20c074086cc9f2c12f8a9
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/o1.mp3
+  sha256: 069faa79ad63bc586d6ae49acc202ace78af8d24ffa8a34d96c20108f5097f3d
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/o2.mp3
+  sha256: 37a4e4642e4b490b77ecc7f7f4b678f467a2f09bf15758c92a53de016cfd6632
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/o3.mp3
+  sha256: aa67ec814a359c1bf82214ff303c0c54d633928a30df64cf9436e681a7efc51b
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/q1.mp3
+  sha256: c9bdc77150a34f6d138078b170385218fa3bcb2e186608be8237aba12fd774e1
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/q2.mp3
+  sha256: 64675e9ed958391e90f017d183012d182eab473905c680df3fec0543fd2e52f2
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/q3.mp3
+  sha256: baf1c6e490d509d442aa00251c7f5ce0842a75ca7482d1446418743ca1393ded
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
+- path: voice/wrong.mp3
+  sha256: cd0f2eac651ca2c72010f48e7f583164921d41837552b871789d9e89d377a218
+  origin: ai
+  source: higgsfield text2speech_v2, elevenlabs engine
